@@ -3,6 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:lucide_icons/lucide_icons.dart';
 import 'package:zen_leader/theme/app_colors.dart';
 import 'package:zen_leader/screens/course_detail_path_screen.dart';
+import 'package:zen_leader/screens/join_seminar_screen.dart';
 
 class ExploreScreen extends StatelessWidget {
   const ExploreScreen({super.key});
@@ -77,10 +78,15 @@ class ExploreScreen extends StatelessWidget {
         ),
       ),
       floatingActionButton: FloatingActionButton.extended(
-        onPressed: () {},
+        onPressed: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => const JoinSeminarScreen()),
+          );
+        },
         backgroundColor: AppColors.primaryBlue,
         icon: const Icon(LucideIcons.rocket, color: Colors.white),
-        label: Text("BẮT ĐẦU NGAY", style: GoogleFonts.fredoka(fontWeight: FontWeight.bold, color: Colors.white)),
+        label: Text("THAM GIA HỘI THẢO", style: GoogleFonts.fredoka(fontWeight: FontWeight.bold, color: Colors.white)),
       ),
     );
   }

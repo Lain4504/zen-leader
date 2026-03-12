@@ -4,6 +4,7 @@ import 'package:lucide_icons/lucide_icons.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:zen_leader/theme/app_colors.dart';
 import 'package:zen_leader/screens/lesson_screen.dart';
+import 'package:zen_leader/screens/live_schedule_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -25,6 +26,15 @@ class HomeScreen extends StatelessWidget {
               const SizedBox(width: 16),
               _buildTopStat(LucideIcons.star, "1450", Colors.amber),
               const Spacer(),
+              IconButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => const LiveScheduleScreen()),
+                  );
+                },
+                icon: const Icon(LucideIcons.calendar, color: AppColors.primaryBlue),
+              ),
               const CircleAvatar(
                 radius: 18,
                 backgroundColor: AppColors.primaryBlue,
