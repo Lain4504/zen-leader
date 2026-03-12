@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:lucide_icons/lucide_icons.dart';
-import 'package:percent_indicator/linear_percent_indicator.dart';
 import 'package:zen_leader/theme/app_colors.dart';
 
 class LessonScreen extends StatefulWidget {
@@ -12,152 +11,133 @@ class LessonScreen extends StatefulWidget {
 }
 
 class _LessonScreenState extends State<LessonScreen> {
-  int? _selectedOption;
-
-  final List<String> _options = [
-    "Dậy sớm và tập thể dục 30 phút",
-    "Ngồi thiền 10 phút trước khi bắt đầu việc",
-    "Uống 2 ly cà phê thật đậm",
-    "Kiểm tra email ngay khi vừa mở mắt",
-  ];
+  int? _selectedAnswer;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(
-        leadingWidth: 40,
-        backgroundColor: Colors.transparent,
+        backgroundColor: Colors.white,
         elevation: 0,
         leading: IconButton(
           icon: const Icon(LucideIcons.x, color: Colors.grey),
           onPressed: () => Navigator.pop(context),
         ),
-        title: LinearPercentIndicator(
-          lineHeight: 12.0,
-          percent: 0.45,
-          backgroundColor: Colors.grey[200],
-          progressColor: AppColors.progressGreen,
-          barRadius: const Radius.circular(10),
+        title: ClipRRect(
+          borderRadius: BorderRadius.circular(10),
+          child: LinearProgressIndicator(
+            value: 0.4,
+            minHeight: 12,
+            backgroundColor: AppColors.background,
+            color: AppColors.progressGreen,
+          ),
         ),
       ),
-      body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 24),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            const SizedBox(height: 20),
-            Text(
-              "BÀI TẬP TÌNH HUỐNG",
-              style: GoogleFonts.fredoka(
-                color: AppColors.textMuted,
-                fontWeight: FontWeight.bold,
-                fontSize: 14,
-              ),
-            ),
-            const SizedBox(height: 12),
-            Text(
-              "Cách tốt nhất để nạp năng lượng 'tĩnh' vào buổi sáng là gì?",
-              style: GoogleFonts.nunito(
-                fontSize: 22,
-                fontWeight: FontWeight.w800,
-                color: AppColors.accentDark,
-              ),
-            ),
-            const SizedBox(height: 32),
-            Expanded(
-              child: ListView.builder(
-                itemCount: _options.length,
-                itemBuilder: (context, index) {
-                  bool isSelected = _selectedOption == index;
-                  return Padding(
-                    padding: const EdgeInsets.only(bottom: 16),
-                    child: GestureDetector(
-                      onTap: () => setState(() => _selectedOption = index),
-                      child: AnimatedContainer(
-                        duration: const Duration(milliseconds: 200),
-                        padding: const EdgeInsets.all(20),
-                        decoration: BoxDecoration(
-                          color: isSelected ? AppColors.primaryBlue.withOpacity(0.05) : Colors.white,
-                          borderRadius: BorderRadius.circular(16),
-                          border: Border.all(
-                            color: isSelected ? AppColors.primaryBlue : Colors.grey.shade300,
-                            width: 2,
-                          ),
-                          boxShadow: [
-                            if (isSelected)
-                              BoxShadow(
-                                color: AppColors.primaryBlue.withOpacity(0.2),
-                                blurRadius: 8,
-                                offset: const Offset(0, 4),
-                              ),
-                          ],
-                        ),
-                        child: Row(
-                          children: [
-                            Container(
-                              width: 30,
-                              height: 30,
-                              decoration: BoxDecoration(
-                                shape: BoxShape.circle,
-                                border: Border.all(
-                                  color: isSelected ? AppColors.primaryBlue : Colors.grey.shade300,
-                                  width: 2,
-                                ),
-                                color: isSelected ? AppColors.primaryBlue : Colors.white,
-                              ),
-                              child: isSelected
-                                  ? const Icon(Icons.check, size: 18, color: Colors.white)
-                                  : null,
-                            ),
-                            const SizedBox(width: 16),
-                            Expanded(
-                              child: Text(
-                                _options[index],
-                                style: GoogleFonts.nunito(
-                                  fontSize: 16,
-                                  fontWeight: FontWeight.w600,
-                                  color: isSelected ? AppColors.primaryBlue : AppColors.accentDark,
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
+      body: Column(
+        children: [
+          Expanded(
+            child: SingleChildScrollView(
+              padding: const EdgeInsets.all(32),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Center(
+                    child: Container(
+                      height: 200,
+                      decoration: BoxDecoration(
+                        color: AppColors.primaryBlue.withOpacity(0.05),
+                        borderRadius: BorderRadius.circular(40),
                       ),
-                    ),
-                  );
-                },
-              ),
-            ),
-            SafeArea(
-              child: Padding(
-                padding: const EdgeInsets.symmetric(vertical: 20),
-                child: SizedBox(
-                  width: double.infinity,
-                  height: 56,
-                  child: ElevatedButton(
-                    onPressed: _selectedOption != null ? () {
-                      // Logic kiểm tra câu trả lời
-                    } : null,
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: _selectedOption != null ? AppColors.primaryBlue : Colors.grey.shade300,
-                      foregroundColor: Colors.white,
-                      elevation: 0,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(16),
-                      ),
-                    ),
-                    child: Text(
-                      "KIỂM TRA",
-                      style: GoogleFonts.fredoka(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 16,
+                      child: const Center(
+                        child: Icon(LucideIcons.smile, size: 100, color: AppColors.primaryBlue),
                       ),
                     ),
                   ),
+                  const SizedBox(height: 40),
+                  Text(
+                    "Câu hỏi tình huống:",
+                    style: GoogleFonts.fredoka(color: AppColors.primaryBlue, fontWeight: FontWeight.bold, fontSize: 14),
+                  ),
+                  const SizedBox(height: 12),
+                  Text(
+                    "Khi một nhân viên mắc lỗi nghiêm trọng gây ảnh hưởng đến dự án, thái độ lãnh đạo tỉnh thức nên là gì?",
+                    style: GoogleFonts.nunito(fontSize: 20, fontWeight: FontWeight.w800, color: AppColors.accentDark, height: 1.4),
+                  ),
+                  const SizedBox(height: 32),
+                  _buildAnswerCard(0, "Chỉ trích công khai trước đội ngũ để làm gương."),
+                  _buildAnswerCard(1, "Giữ bình tĩnh, lắng nghe nguyên nhân và cùng tìm giải pháp."),
+                  _buildAnswerCard(2, "Phớt lờ lỗi lầm để duy trì hòa khí trong nhóm."),
+                  _buildAnswerCard(3, "Sa thải nhân viên đó ngay lập tức để giảm rủi ro."),
+                ],
+              ),
+            ),
+          ),
+          _buildBottomAction(),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildAnswerCard(int index, String text) {
+    bool isSelected = _selectedAnswer == index;
+    return GestureDetector(
+      onTap: () => setState(() => _selectedAnswer = index),
+      child: Container(
+        margin: const EdgeInsets.only(bottom: 16),
+        padding: const EdgeInsets.all(20),
+        decoration: BoxDecoration(
+          color: isSelected ? AppColors.primaryBlue.withOpacity(0.05) : Colors.white,
+          borderRadius: BorderRadius.circular(24),
+          border: Border.all(
+            color: isSelected ? AppColors.primaryBlue : Colors.grey.shade100,
+            width: 2,
+          ),
+          boxShadow: [
+            BoxShadow(color: Colors.black.withOpacity(0.02), blurRadius: 10, offset: const Offset(0, 4)),
+          ],
+        ),
+        child: Row(
+          children: [
+            Expanded(
+              child: Text(
+                text,
+                style: GoogleFonts.nunito(
+                  fontSize: 16,
+                  fontWeight: isSelected ? FontWeight.bold : FontWeight.normal,
+                  color: isSelected ? AppColors.primaryBlue : AppColors.accentDark,
                 ),
               ),
             ),
+            if (isSelected)
+              const Icon(LucideIcons.checkCircle, color: AppColors.primaryBlue, size: 24),
           ],
+        ),
+      ),
+    );
+  }
+
+  Widget _buildBottomAction() {
+    return Container(
+      padding: const EdgeInsets.only(top: 24, left: 24, right: 24, bottom: 40),
+      decoration: BoxDecoration(
+        color: Colors.white,
+        boxShadow: [
+          BoxShadow(color: Colors.black.withOpacity(0.05), blurRadius: 20, offset: const Offset(0, -5)),
+        ],
+      ),
+      child: ElevatedButton(
+        onPressed: _selectedAnswer != null ? () {} : null,
+        style: ElevatedButton.styleFrom(
+          backgroundColor: AppColors.primaryBlue,
+          minimumSize: const Size(double.infinity, 60),
+          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+          elevation: 0,
+          disabledBackgroundColor: Colors.grey.shade200,
+        ),
+        child: Text(
+          "KIỂM TRA",
+          style: GoogleFonts.fredoka(fontWeight: FontWeight.bold, color: Colors.white, fontSize: 16),
         ),
       ),
     );

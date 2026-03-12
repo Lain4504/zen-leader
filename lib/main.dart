@@ -7,7 +7,6 @@ import 'package:zen_leader/screens/profile_screen.dart';
 import 'package:zen_leader/screens/explore_screen.dart';
 import 'package:zen_leader/screens/leaderboard_screen.dart';
 import 'package:zen_leader/screens/forum_screen.dart';
-import 'package:zen_leader/screens/my_courses_screen.dart';
 
 void main() {
   runApp(const ZenLeaderApp());

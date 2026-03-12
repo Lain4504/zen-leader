@@ -5,6 +5,7 @@ import 'package:flutter_animate/flutter_animate.dart';
 import 'package:zen_leader/theme/app_colors.dart';
 import 'package:zen_leader/screens/lesson_screen.dart';
 import 'package:zen_leader/screens/live_schedule_screen.dart';
+import 'package:zen_leader/screens/messages_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -12,210 +13,242 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: PreferredSize(
-        preferredSize: const Size.fromHeight(70),
-        child: Container(
-          padding: const EdgeInsets.only(top: 40, left: 16, right: 16, bottom: 10),
-          decoration: BoxDecoration(
-            color: Colors.white,
-            border: Border(bottom: BorderSide(color: Colors.grey.shade200)),
-          ),
-          child: Row(
-            children: [
-              _buildTopStat(LucideIcons.flame, "12", Colors.orange),
-              const SizedBox(width: 16),
-              _buildTopStat(LucideIcons.star, "1450", Colors.amber),
-              const Spacer(),
-              IconButton(
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => const LiveScheduleScreen()),
-                  );
-                },
-                icon: const Icon(LucideIcons.calendar, color: AppColors.primaryBlue),
-              ),
-              const CircleAvatar(
-                radius: 18,
-                backgroundColor: AppColors.primaryBlue,
-                child: Icon(Icons.person, color: Colors.white, size: 20),
-              ),
-            ],
-          ),
-        ),
-      ),
-      body: SingleChildScrollView(
+      backgroundColor: AppColors.background,
+      body: SafeArea(
         child: Column(
           children: [
-            const SizedBox(height: 40),
-            _buildLessonNode(
-              context,
-              title: "Lãnh đạo bản thân",
-              icon: LucideIcons.user,
-              progress: 0.8,
-              align: 0,
-              isCompleted: true,
+            _buildPremiumTopBar(context),
+            Expanded(
+              child: SingleChildScrollView(
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 40),
+                  child: Stack(
+                    alignment: Alignment.center,
+                    children: [
+                      CustomPaint(
+                        size: const Size(double.infinity, 1000),
+                        painter: PathPainter(),
+                      ),
+                      Column(
+                        children: [
+                          _buildPremiumNode(
+                            icon: LucideIcons.compass,
+                            title: "Lãnh đạo bản thân",
+                            status: NodeStatus.completed,
+                            context: context,
+                          ),
+                          const SizedBox(height: 80),
+                          _buildPremiumNode(
+                            icon: LucideIcons.batteryCharging,
+                            title: "Quản trị năng lượng",
+                            status: NodeStatus.completed,
+                            offset: 60,
+                            context: context,
+                          ),
+                          const SizedBox(height: 80),
+                          _buildPremiumNode(
+                            icon: LucideIcons.target,
+                            title: "Thiền định",
+                            status: NodeStatus.active,
+                            offset: -60,
+                            context: context,
+                          ),
+                          const SizedBox(height: 80),
+                          _buildPremiumNode(
+                            icon: LucideIcons.users,
+                            title: "Lãnh đạo đội ngũ",
+                            status: NodeStatus.locked,
+                            context: context,
+                          ),
+                          const SizedBox(height: 80),
+                          _buildPremiumNode(
+                            icon: LucideIcons.heart,
+                            title: "Lãnh đạo từ tâm",
+                            status: NodeStatus.locked,
+                            offset: 60,
+                            context: context,
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
+                ),
+              ),
             ),
-            _buildPathLine(isRight: true),
-            _buildLessonNode(
-              context,
-              title: "Quản trị năng lượng",
-              icon: LucideIcons.zap,
-              progress: 0.4,
-              align: 40,
-              isActive: true,
-            ),
-            _buildPathLine(isRight: false),
-            _buildLessonNode(
-              context,
-              title: "Thiền định",
-              icon: LucideIcons.compass,
-              progress: 0,
-              align: -40,
-            ),
-            _buildPathLine(isRight: true),
-            _buildLessonNode(
-              context,
-              title: "Lãnh đạo đội nhóm",
-              icon: LucideIcons.users,
-              progress: 0,
-              align: 20,
-            ),
-            const SizedBox(height: 100),
           ],
         ),
       ),
     );
   }
 
-  Widget _buildTopStat(IconData icon, String value, Color color) {
-    return Row(
-      children: [
-        Icon(icon, color: color, size: 22),
-        const SizedBox(width: 4),
-        Text(
-          value,
-          style: GoogleFonts.fredoka(
-            fontWeight: FontWeight.w600,
-            fontSize: 16,
-            color: AppColors.accentDark,
+  Widget _buildPremiumTopBar(BuildContext context) {
+    return Container(
+      padding: const EdgeInsets.all(24),
+      decoration: BoxDecoration(
+        color: Colors.white,
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black.withOpacity(0.04),
+            blurRadius: 10,
+            offset: const Offset(0, 4),
           ),
-        ),
-      ],
-    );
-  }
-
-  Widget _buildLessonNode(
-    BuildContext context, {
-    required String title,
-    required IconData icon,
-    required double progress,
-    double align = 0,
-    bool isActive = false,
-    bool isCompleted = false,
-  }) {
-    return Padding(
-      padding: EdgeInsets.only(left: align > 0 ? align : 0, right: align < 0 ? -align : 0),
-      child: Column(
+        ],
+      ),
+      child: Row(
         children: [
-          GestureDetector(
-            onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => const LessonScreen()),
-              );
-            },
-            child: Stack(
-              alignment: Alignment.center,
-              children: [
-                Container(
-                  width: 90,
-                  height: 90,
-                  decoration: BoxDecoration(
-                    shape: BoxShape.circle,
-                    color: isCompleted ? AppColors.progressGreen : Colors.white,
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.black.withOpacity(0.1),
-                        blurRadius: 0,
-                        offset: const Offset(0, 6),
-                      ),
-                    ],
-                    border: Border.all(
-                      color: isActive ? AppColors.primaryBlue : Colors.grey.shade300,
-                      width: 4,
-                    ),
-                  ),
-                  child: Icon(
-                    icon,
-                    size: 36,
-                    color: isCompleted ? Colors.white : (isActive ? AppColors.primaryBlue : Colors.grey),
-                  ),
-                ).animate(onPlay: (controller) => controller.repeat(reverse: true))
-                  .scale(begin: const Offset(1, 1), end: Offset(isActive ? 1.05 : 1, isActive ? 1.05 : 1), duration: 1000.ms),
-                if (isActive)
-                  Positioned(
-                    top: -10,
-                    child: Container(
-                      padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 4),
-                      decoration: BoxDecoration(
-                        color: AppColors.primaryBlue,
-                        borderRadius: BorderRadius.circular(12),
-                      ),
-                      child: Text(
-                        "BẮT ĐẦU",
-                        style: GoogleFonts.fredoka(color: Colors.white, fontSize: 12, fontWeight: FontWeight.bold),
-                      ),
-                    ),
-                  ),
-              ],
-            ),
-          ),
-          const SizedBox(height: 12),
-          Text(
-            title,
-            style: GoogleFonts.nunito(
-              fontWeight: FontWeight.bold,
-              fontSize: 16,
-              color: AppColors.accentDark,
-            ),
+          _buildPremiumStat(LucideIcons.flame, "12", Colors.orange),
+          const SizedBox(width: 16),
+          _buildPremiumStat(LucideIcons.star, "1450", Colors.amber),
+          const Spacer(),
+          _buildIconButton(LucideIcons.calendar, () {
+            Navigator.push(context, MaterialPageRoute(builder: (context) => const LiveScheduleScreen()));
+          }),
+          _buildIconButton(LucideIcons.messageCircle, () {
+            Navigator.push(context, MaterialPageRoute(builder: (context) => const MessagesScreen()));
+          }),
+          const SizedBox(width: 8),
+          const CircleAvatar(
+            radius: 20,
+            backgroundColor: AppColors.primaryBlue,
+            child: Icon(Icons.person, color: Colors.white, size: 22),
           ),
         ],
       ),
     );
   }
 
-  Widget _buildPathLine({required bool isRight}) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 10),
-      child: CustomPaint(
-        size: const Size(60, 40),
-        painter: PathPainter(isRight: isRight),
+  Widget _buildPremiumStat(IconData icon, String value, Color color) {
+    return Container(
+      padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+      decoration: BoxDecoration(
+        color: color.withOpacity(0.1),
+        borderRadius: BorderRadius.circular(12),
+      ),
+      child: Row(
+        children: [
+          Icon(icon, color: color, size: 18),
+          const SizedBox(width: 6),
+          Text(
+            value,
+            style: GoogleFonts.fredoka(fontWeight: FontWeight.bold, color: color, fontSize: 14),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildIconButton(IconData icon, VoidCallback onTap) {
+    return IconButton(
+      onPressed: onTap,
+      icon: Icon(icon, color: AppColors.primaryBlue, size: 22),
+    );
+  }
+
+  Widget _buildPremiumNode({
+    required IconData icon,
+    required String title,
+    required NodeStatus status,
+    double offset = 0,
+    required BuildContext context,
+  }) {
+    Color nodeColor = status == NodeStatus.completed 
+        ? AppColors.progressGreen 
+        : (status == NodeStatus.active ? AppColors.primaryBlue : Colors.grey.shade300);
+
+    return Transform.translate(
+      offset: Offset(offset, 0),
+      child: Column(
+        children: [
+          GestureDetector(
+            onTap: () {
+              if (status != NodeStatus.locked) {
+                Navigator.push(context, MaterialPageRoute(builder: (context) => const LessonScreen()));
+              }
+            },
+            child: Container(
+              width: 90,
+              height: 90,
+              decoration: BoxDecoration(
+                color: Colors.white,
+                shape: BoxShape.circle,
+                boxShadow: [
+                  BoxShadow(
+                    color: nodeColor.withOpacity(0.3),
+                    blurRadius: 20,
+                    offset: const Offset(0, 10),
+                  ),
+                ],
+              ),
+              child: Stack(
+                alignment: Alignment.center,
+                children: [
+                  if (status == NodeStatus.active)
+                    const CircularProgressIndicator(
+                      value: 0.7,
+                      strokeWidth: 6,
+                      color: AppColors.primaryBlue,
+                    ).animate(onPlay: (controller) => controller.repeat())
+                     .scale(begin: const Offset(1.1, 1.1), end: const Offset(1.2, 1.2), duration: 1000.ms)
+                     .fadeOut(duration: 1000.ms),
+                  Container(
+                    width: 70,
+                    height: 70,
+                    decoration: BoxDecoration(
+                      color: nodeColor,
+                      shape: BoxShape.circle,
+                    ),
+                    child: Icon(
+                      status == NodeStatus.locked ? LucideIcons.lock : icon,
+                      color: Colors.white,
+                      size: 32,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
+          const SizedBox(height: 12),
+          Container(
+            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 6),
+            decoration: BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.circular(16),
+              boxShadow: [
+                BoxShadow(color: Colors.black.withOpacity(0.05), blurRadius: 10, offset: const Offset(0, 2)),
+              ],
+            ),
+            child: Text(
+              title,
+              style: GoogleFonts.fredoka(
+                fontWeight: FontWeight.bold,
+                fontSize: 13,
+                color: status == NodeStatus.locked ? Colors.grey : AppColors.accentDark,
+              ),
+            ),
+          ),
+        ],
       ),
     );
   }
 }
 
-class PathPainter extends CustomPainter {
-  final bool isRight;
-  PathPainter({required this.isRight});
+enum NodeStatus { completed, active, locked }
 
+class PathPainter extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
     final paint = Paint()
-      ..color = Colors.grey.shade300
+      ..color = Colors.grey.withOpacity(0.2)
       ..style = PaintingStyle.stroke
-      ..strokeWidth = 10
+      ..strokeWidth = 12
       ..strokeCap = StrokeCap.round;
 
     final path = Path();
-    if (isRight) {
-      path.moveTo(0, 0);
-      path.quadraticBezierTo(size.width, size.height / 2, 0, size.height);
-    } else {
-      path.moveTo(size.width, 0);
-      path.quadraticBezierTo(0, size.height / 2, size.width, size.height);
-    }
+    path.moveTo(size.width / 2, 0);
+    path.quadraticBezierTo(size.width / 2 + 100, 150, size.width / 2, 300);
+    path.quadraticBezierTo(size.width / 2 - 100, 450, size.width / 2, 600);
+    path.quadraticBezierTo(size.width / 2 + 100, 750, size.width / 2, 900);
+    
     canvas.drawPath(path, paint);
   }
 

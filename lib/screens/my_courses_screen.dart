@@ -1,197 +1,162 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:lucide_icons/lucide_icons.dart';
-import 'package:percent_indicator/linear_percent_indicator.dart';
 import 'package:zen_leader/theme/app_colors.dart';
-import 'package:zen_leader/screens/course_detail_path_screen.dart';
 
-class MyCoursesScreen extends StatefulWidget {
+class MyCoursesScreen extends StatelessWidget {
   const MyCoursesScreen({super.key});
 
   @override
-  State<MyCoursesScreen> createState() => _MyCoursesScreenState();
-}
-
-class _MyCoursesScreenState extends State<MyCoursesScreen> {
-  bool _isOngoing = true;
-
-  @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: AppColors.background,
-      appBar: AppBar(
-        title: Text("KHÓA HỌC CỦA TÔI", style: GoogleFonts.fredoka(fontWeight: FontWeight.bold)),
-        centerTitle: true,
-        backgroundColor: Colors.white,
-        elevation: 0,
+    return DefaultTabController(
+      length: 2,
+      child: Scaffold(
+        backgroundColor: AppColors.background,
+        appBar: AppBar(
+          backgroundColor: Colors.white,
+          elevation: 0,
+          iconTheme: const IconThemeData(color: AppColors.accentDark),
+          title: Text("KHÓA HỌC", style: GoogleFonts.fredoka(fontWeight: FontWeight.bold)),
+          centerTitle: true,
+          bottom: TabBar(
+            indicatorColor: AppColors.primaryBlue,
+            indicatorWeight: 3,
+            labelColor: AppColors.primaryBlue,
+            unselectedLabelColor: Colors.grey,
+            labelStyle: GoogleFonts.fredoka(fontWeight: FontWeight.bold),
+            tabs: const [
+              Tab(text: "Đang học"),
+              Tab(text: "Hoàn thành"),
+            ],
+          ),
+        ),
+        body: TabBarView(
+          children: [
+            _buildCourseList(isCompleted: false),
+            _buildCourseList(isCompleted: true),
+          ],
+        ),
       ),
-      body: Column(
+    );
+  }
+
+  Widget _buildCourseList({required bool isCompleted}) {
+    return ListView(
+      padding: const EdgeInsets.all(24),
+      children: [
+        _buildPremiumCourseCard(
+          "Lãnh đạo từ tâm",
+          "Thầy Minh Niệm",
+          0.75,
+          isCompleted,
+        ),
+        _buildPremiumCourseCard(
+          "Thiền định cho doanh nhân",
+          "Mentor Duy Khanh",
+          0.30,
+          isCompleted,
+        ),
+        if (isCompleted)
+          _buildPremiumCourseCard(
+            "Tư duy tỉnh thức",
+            "Giảng viên Cao Anh",
+            1.0,
+            true,
+          ),
+      ],
+    );
+  }
+
+  Widget _buildPremiumCourseCard(String title, String instructor, double progress, bool isCompleted) {
+    return Container(
+      margin: const EdgeInsets.only(bottom: 24),
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(24),
+        boxShadow: [
+          BoxShadow(color: Colors.black.withOpacity(0.04), blurRadius: 20, offset: const Offset(0, 5)),
+        ],
+      ),
+      child: Column(
         children: [
           Container(
-            padding: const EdgeInsets.symmetric(vertical: 20),
-            color: Colors.white,
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                _buildToggleButton("Đang học", _isOngoing, () => setState(() => _isOngoing = true)),
-                const SizedBox(width: 16),
-                _buildToggleButton("Hoàn thành", !_isOngoing, () => setState(() => _isOngoing = false)),
-              ],
+            height: 160,
+            decoration: BoxDecoration(
+              color: AppColors.primaryBlue.withOpacity(0.1),
+              borderRadius: const BorderRadius.vertical(top: Radius.circular(24)),
+              image: const DecorationImage(
+                image: NetworkImage("https://images.unsplash.com/photo-1506126613408-eca07ce68773?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"),
+                fit: BoxFit.cover,
+                opacity: 0.8,
+              ),
             ),
           ),
-          Expanded(
-            child: ListView.builder(
-              padding: const EdgeInsets.all(24),
-              itemCount: _isOngoing ? 2 : 1,
-              itemBuilder: (context, index) {
-                return _buildCourseProgressCard(
-                  context,
-                  title: _isOngoing 
-                    ? (index == 0 ? "Zen Leader 1: Làm Chủ Bản Thân" : "Quản Trị Năng Lượng")
-                    : "Lãnh Đạo Đội Nhóm Cơ Bản",
-                  progress: _isOngoing ? (index == 0 ? 0.65 : 0.4) : 1.0,
-                  sessions: _isOngoing ? (index == 0 ? "8/12" : "3/10") : "10/10",
-                  isCompleted: !_isOngoing,
-                );
-              },
+          Padding(
+            padding: const EdgeInsets.all(20),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  title,
+                  style: GoogleFonts.nunito(fontSize: 18, fontWeight: FontWeight.w800, color: AppColors.accentDark),
+                ),
+                const SizedBox(height: 4),
+                Text(
+                  instructor,
+                  style: GoogleFonts.nunito(fontSize: 14, color: Colors.grey),
+                ),
+                const SizedBox(height: 20),
+                Row(
+                  children: [
+                    Expanded(
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(10),
+                        child: LinearProgressIndicator(
+                          value: isCompleted ? 1.0 : progress,
+                          minHeight: 10,
+                          backgroundColor: AppColors.background,
+                          color: isCompleted ? AppColors.progressGreen : AppColors.primaryBlue,
+                        ),
+                      ),
+                    ),
+                    const SizedBox(width: 16),
+                    Text(
+                      "${(progress * 100).toInt()}%",
+                      style: GoogleFonts.fredoka(fontWeight: FontWeight.bold, color: AppColors.primaryBlue),
+                    ),
+                  ],
+                ),
+                const SizedBox(height: 20),
+                if (!isCompleted)
+                  ElevatedButton(
+                    onPressed: () {},
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: AppColors.primaryBlue,
+                      minimumSize: const Size(double.infinity, 50),
+                      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
+                      elevation: 0,
+                    ),
+                    child: Text(
+                      "TIẾP TỤC HỌC",
+                      style: GoogleFonts.fredoka(fontWeight: FontWeight.bold, color: Colors.white),
+                    ),
+                  ),
+                if (isCompleted)
+                  OutlinedButton(
+                    onPressed: () {},
+                    style: OutlinedButton.styleFrom(
+                      minimumSize: const Size(double.infinity, 50),
+                      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
+                      side: const BorderSide(color: AppColors.primaryBlue),
+                    ),
+                    child: Text(
+                      "XEM CHỨNG CHỈ",
+                      style: GoogleFonts.fredoka(fontWeight: FontWeight.bold, color: AppColors.primaryBlue),
+                    ),
+                  ),
+              ],
             ),
           ),
         ],
-      ),
-    );
-  }
-
-  Widget _buildToggleButton(String label, bool isSelected, VoidCallback onTap) {
-    return GestureDetector(
-      onTap: onTap,
-      child: AnimatedContainer(
-        duration: const Duration(milliseconds: 200),
-        padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 10),
-        decoration: BoxDecoration(
-          color: isSelected ? AppColors.primaryBlue : Colors.white,
-          borderRadius: BorderRadius.circular(20),
-          border: Border.all(color: isSelected ? AppColors.primaryBlue : Colors.grey.shade300),
-        ),
-        child: Text(
-          label,
-          style: GoogleFonts.nunito(
-            fontWeight: FontWeight.bold,
-            color: isSelected ? Colors.white : AppColors.accentDark,
-          ),
-        ),
-      ),
-    );
-  }
-
-  Widget _buildCourseProgressCard(
-    BuildContext context, {
-    required String title,
-    required double progress,
-    required String sessions,
-    required bool isCompleted,
-  }) {
-    return GestureDetector(
-      onTap: () {
-        Navigator.push(
-          context,
-          MaterialPageRoute(builder: (context) => const CourseDetailPathScreen()),
-        );
-      },
-      child: Container(
-        margin: const EdgeInsets.only(bottom: 20),
-        padding: const EdgeInsets.all(20),
-        decoration: BoxDecoration(
-          color: Colors.white,
-          borderRadius: BorderRadius.circular(20),
-          boxShadow: [
-            BoxShadow(
-              color: Colors.black.withOpacity(0.04),
-              blurRadius: 10,
-              offset: const Offset(0, 4),
-            ),
-          ],
-        ),
-        child: Column(
-          children: [
-            Row(
-              children: [
-                Container(
-                  width: 60,
-                  height: 60,
-                  decoration: BoxDecoration(
-                    color: AppColors.primaryBlue.withOpacity(0.1),
-                    borderRadius: BorderRadius.circular(12),
-                  ),
-                  child: const Icon(LucideIcons.bookOpen, color: AppColors.primaryBlue),
-                ),
-                const SizedBox(width: 16),
-                Expanded(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        title,
-                        style: GoogleFonts.nunito(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 16,
-                          color: AppColors.accentDark,
-                        ),
-                      ),
-                      const SizedBox(height: 4),
-                      Text(
-                        "$sessions bài học",
-                        style: GoogleFonts.nunito(fontSize: 12, color: AppColors.textMuted),
-                      ),
-                    ],
-                  ),
-                ),
-              ],
-            ),
-            const SizedBox(height: 20),
-            Row(
-              children: [
-                Expanded(
-                  child: LinearPercentIndicator(
-                    lineHeight: 10,
-                    percent: progress,
-                    progressColor: AppColors.progressGreen,
-                    backgroundColor: Colors.grey.shade100,
-                    barRadius: const Radius.circular(5),
-                    padding: EdgeInsets.zero,
-                  ),
-                ),
-                const SizedBox(width: 12),
-                Text(
-                  "${(progress * 100).toInt()}%",
-                  style: GoogleFonts.fredoka(fontWeight: FontWeight.bold, fontSize: 14),
-                ),
-              ],
-            ),
-            const SizedBox(height: 16),
-            SizedBox(
-              width: double.infinity,
-              child: ElevatedButton(
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => const CourseDetailPathScreen()),
-                  );
-                },
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: isCompleted ? Colors.white : AppColors.primaryBlue,
-                  foregroundColor: isCompleted ? AppColors.primaryBlue : Colors.white,
-                  elevation: 0,
-                  side: isCompleted ? const BorderSide(color: AppColors.primaryBlue) : null,
-                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
-                ),
-                child: Text(
-                  isCompleted ? "XEM LẠI" : "TIẾP TỤC HỌC",
-                  style: GoogleFonts.fredoka(fontWeight: FontWeight.bold),
-                ),
-              ),
-            ),
-          ],
-        ),
       ),
     );
   }
