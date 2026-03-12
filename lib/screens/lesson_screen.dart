@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:lucide_icons/lucide_icons.dart';
 import 'package:zen_leader/theme/app_colors.dart';
+import 'package:zen_leader/screens/day_completed_screen.dart';
 
 class LessonScreen extends StatefulWidget {
   const LessonScreen({super.key});
@@ -26,7 +27,7 @@ class _LessonScreenState extends State<LessonScreen> {
         ),
         title: ClipRRect(
           borderRadius: BorderRadius.circular(10),
-          child: LinearProgressIndicator(
+          child: const LinearProgressIndicator(
             value: 0.4,
             minHeight: 12,
             backgroundColor: AppColors.background,
@@ -49,8 +50,13 @@ class _LessonScreenState extends State<LessonScreen> {
                         color: AppColors.primaryBlue.withOpacity(0.05),
                         borderRadius: BorderRadius.circular(40),
                       ),
-                      child: const Center(
-                        child: Icon(LucideIcons.smile, size: 100, color: AppColors.primaryBlue),
+                      child: Center(
+                        child: Image.asset(
+                          'assets/logo-zenleader.webp',
+                          width: 120,
+                          height: 120,
+                          fit: BoxFit.contain,
+                        ),
                       ),
                     ),
                   ),
@@ -127,7 +133,9 @@ class _LessonScreenState extends State<LessonScreen> {
         ],
       ),
       child: ElevatedButton(
-        onPressed: _selectedAnswer != null ? () {} : null,
+        onPressed: _selectedAnswer != null ? () {
+          Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => const DayCompletedScreen()));
+        } : null,
         style: ElevatedButton.styleFrom(
           backgroundColor: AppColors.primaryBlue,
           minimumSize: const Size(double.infinity, 60),

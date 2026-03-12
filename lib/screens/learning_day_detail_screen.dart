@@ -3,6 +3,8 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:lucide_icons/lucide_icons.dart';
 import 'package:zen_leader/theme/app_colors.dart';
 import 'package:zen_leader/screens/live_meeting_screen.dart';
+import 'package:zen_leader/screens/video_player_screen.dart';
+import 'package:zen_leader/screens/lesson_screen.dart';
 
 class LearningDayDetailScreen extends StatelessWidget {
   const LearningDayDetailScreen({super.key});
@@ -40,24 +42,28 @@ class LearningDayDetailScreen extends StatelessWidget {
                   duration: "15 phút",
                   icon: LucideIcons.playCircle,
                   status: MaterialStatus.completed,
+                  onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => const VideoPlayerScreen(title: "Nguyên lý lắng nghe"))),
                 ),
                 _buildMaterialCard(
                   title: "Tài liệu: Thực hành sâu",
                   duration: "10 phút",
                   icon: LucideIcons.fileText,
                   status: MaterialStatus.available,
+                  onTap: () {},
                 ),
                 _buildMaterialCard(
                   title: "Bài tập: Rèn luyện tâm trí",
                   duration: "20 phút",
                   icon: LucideIcons.edit3,
                   status: MaterialStatus.available,
+                  onTap: () {},
                 ),
                 _buildMaterialCard(
                   title: "Luyện tập: Quiz kiến thức",
                   duration: "5 phút",
                   icon: LucideIcons.helpCircle,
                   status: MaterialStatus.available,
+                  onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => const LessonScreen())),
                 ),
               ],
             ),
@@ -184,50 +190,55 @@ class LearningDayDetailScreen extends StatelessWidget {
     required String duration,
     required IconData icon,
     required MaterialStatus status,
+    required VoidCallback onTap,
   }) {
     bool isCompleted = status == MaterialStatus.completed;
 
-    return Container(
-      margin: const EdgeInsets.only(bottom: 16),
-      padding: const EdgeInsets.all(20),
-      decoration: BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.circular(24),
-        boxShadow: [
-          BoxShadow(color: Colors.black.withOpacity(0.02), blurRadius: 10, offset: const Offset(0, 4)),
-        ],
-      ),
-      child: Row(
-        children: [
-          Container(
-            padding: const EdgeInsets.all(12),
-            decoration: BoxDecoration(
-              color: isCompleted ? AppColors.progressGreen.withOpacity(0.1) : AppColors.background,
-              shape: BoxShape.circle,
+    return GestureDetector(
+      onTap: onTap,
+      child: Container(
+        margin: const EdgeInsets.only(bottom: 16),
+        padding: const EdgeInsets.all(20),
+        decoration: BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.circular(24),
+          boxShadow: [
+            BoxShadow(color: Colors.black.withOpacity(0.02), blurRadius: 10, offset: const Offset(0, 4)),
+          ],
+        ),
+        child: Row(
+          children: [
+            Container(
+              padding: const EdgeInsets.all(12),
+              decoration: BoxDecoration(
+                color: isCompleted ? AppColors.progressGreen.withOpacity(0.1) : AppColors.background,
+                shape: BoxShape.circle,
+              ),
+              child: Icon(icon, color: isCompleted ? AppColors.progressGreen : AppColors.primaryBlue, size: 22),
             ),
-            child: Icon(icon, color: isCompleted ? AppColors.progressGreen : AppColors.primaryBlue, size: 22),
-          ),
-          const SizedBox(width: 16),
-          Expanded(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  title,
-                  style: GoogleFonts.nunito(fontWeight: FontWeight.bold, fontSize: 15),
-                ),
-                Text(
-                  duration,
-                  style: GoogleFonts.nunito(fontSize: 12, color: Colors.grey),
-                ),
-              ],
+            const SizedBox(width: 16),
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    title,
+                    style: GoogleFonts.nunito(fontWeight: FontWeight.bold, fontSize: 15),
+                  ),
+                  const SizedBox(height: 4),
+                  Text(
+                    duration,
+                    style: GoogleFonts.nunito(fontSize: 12, color: Colors.grey),
+                  ),
+                ],
+              ),
             ),
-          ),
-          if (isCompleted)
-            const Icon(LucideIcons.checkCircle, color: AppColors.progressGreen, size: 24)
-          else
-            const Icon(LucideIcons.chevronRight, color: Colors.grey, size: 20),
-        ],
+            if (isCompleted)
+              const Icon(LucideIcons.checkCircle, color: AppColors.progressGreen, size: 20)
+            else
+              const Icon(LucideIcons.chevronRight, color: Colors.grey, size: 18),
+          ],
+        ),
       ),
     );
   }

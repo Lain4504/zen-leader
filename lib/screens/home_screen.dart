@@ -6,6 +6,7 @@ import 'package:zen_leader/theme/app_colors.dart';
 import 'package:zen_leader/screens/lesson_screen.dart';
 import 'package:zen_leader/screens/live_schedule_screen.dart';
 import 'package:zen_leader/screens/messages_screen.dart';
+import 'package:zen_leader/screens/notifications_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -96,22 +97,25 @@ class HomeScreen extends StatelessWidget {
       ),
       child: Row(
         children: [
-          _buildPremiumStat(LucideIcons.flame, "12", Colors.orange),
+          Image.asset(
+            'assets/logo-zenleader.webp',
+            height: 40,
+            width: 40,
+          ),
           const SizedBox(width: 16),
+          _buildPremiumStat(LucideIcons.flame, "12", Colors.orange),
+          const SizedBox(width: 8),
           _buildPremiumStat(LucideIcons.star, "1450", Colors.amber),
           const Spacer(),
+          _buildIconButton(LucideIcons.bell, () {
+            Navigator.push(context, MaterialPageRoute(builder: (context) => const NotificationsScreen()));
+          }),
           _buildIconButton(LucideIcons.calendar, () {
             Navigator.push(context, MaterialPageRoute(builder: (context) => const LiveScheduleScreen()));
           }),
           _buildIconButton(LucideIcons.messageCircle, () {
             Navigator.push(context, MaterialPageRoute(builder: (context) => const MessagesScreen()));
           }),
-          const SizedBox(width: 8),
-          const CircleAvatar(
-            radius: 20,
-            backgroundColor: AppColors.primaryBlue,
-            child: Icon(Icons.person, color: Colors.white, size: 22),
-          ),
         ],
       ),
     );
@@ -119,18 +123,18 @@ class HomeScreen extends StatelessWidget {
 
   Widget _buildPremiumStat(IconData icon, String value, Color color) {
     return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+      padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
       decoration: BoxDecoration(
         color: color.withOpacity(0.1),
         borderRadius: BorderRadius.circular(12),
       ),
       child: Row(
         children: [
-          Icon(icon, color: color, size: 18),
-          const SizedBox(width: 6),
+          Icon(icon, color: color, size: 16),
+          const SizedBox(width: 4),
           Text(
             value,
-            style: GoogleFonts.fredoka(fontWeight: FontWeight.bold, color: color, fontSize: 14),
+            style: GoogleFonts.fredoka(fontWeight: FontWeight.bold, color: color, fontSize: 13),
           ),
         ],
       ),
@@ -140,7 +144,9 @@ class HomeScreen extends StatelessWidget {
   Widget _buildIconButton(IconData icon, VoidCallback onTap) {
     return IconButton(
       onPressed: onTap,
-      icon: Icon(icon, color: AppColors.primaryBlue, size: 22),
+      padding: const EdgeInsets.symmetric(horizontal: 4),
+      constraints: const BoxConstraints(),
+      icon: Icon(icon, color: AppColors.primaryBlue, size: 20),
     );
   }
 

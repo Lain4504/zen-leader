@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:lucide_icons/lucide_icons.dart';
 import 'package:zen_leader/theme/app_colors.dart';
-import 'package:zen_leader/screens/course_detail_path_screen.dart';
+import 'package:zen_leader/screens/course_detail_screen.dart';
 import 'package:zen_leader/screens/join_seminar_screen.dart';
 
 class ExploreScreen extends StatelessWidget {
@@ -148,7 +148,7 @@ class ExploreScreen extends StatelessWidget {
       onTap: () {
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => const CourseDetailPathScreen()),
+          MaterialPageRoute(builder: (context) => const CourseDetailScreen()),
         );
       },
       child: Container(
@@ -174,7 +174,12 @@ class ExploreScreen extends StatelessWidget {
                 borderRadius: const BorderRadius.vertical(top: Radius.circular(20)),
               ),
               child: Center(
-                child: Icon(LucideIcons.image, size: 48, color: color.withOpacity(0.5)),
+                child: Image.asset(
+                  'assets/logo-zenleader.webp',
+                  width: 80,
+                  height: 80,
+                  fit: BoxFit.contain,
+                ),
               ),
             ),
             Padding(

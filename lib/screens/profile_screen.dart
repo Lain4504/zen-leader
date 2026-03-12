@@ -2,8 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:lucide_icons/lucide_icons.dart';
 import 'package:zen_leader/theme/app_colors.dart';
-import 'package:zen_leader/screens/my_courses_screen.dart';
 import 'package:zen_leader/screens/language_selection_screen.dart';
+import 'package:zen_leader/screens/settings_screen.dart';
+import 'package:zen_leader/screens/auth_screen.dart';
+import 'package:zen_leader/screens/my_courses_screen.dart';
 
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({super.key});
@@ -30,7 +32,7 @@ class ProfileScreen extends StatelessWidget {
               padding: const EdgeInsets.all(24),
               child: ElevatedButton(
                 onPressed: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => const MyCoursesScreen()));
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => MyCoursesScreen()));
                 },
                 style: ElevatedButton.styleFrom(
                   backgroundColor: AppColors.primaryBlue,
@@ -63,10 +65,15 @@ class ProfileScreen extends StatelessWidget {
               Container(
                 padding: const EdgeInsets.all(4),
                 decoration: const BoxDecoration(color: AppColors.primaryBlue, shape: BoxShape.circle),
-                child: const CircleAvatar(
+                child: CircleAvatar(
                   radius: 60,
                   backgroundColor: AppColors.background,
-                  child: Icon(LucideIcons.user, size: 60, color: Colors.grey),
+                  child: Image.asset(
+                    'assets/logo-zenleader.webp',
+                    width: 70,
+                    height: 70,
+                    fit: BoxFit.contain,
+                  ),
                 ),
               ),
               Container(

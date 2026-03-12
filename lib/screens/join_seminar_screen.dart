@@ -163,7 +163,12 @@ class JoinSeminarScreen extends StatelessWidget {
                     borderRadius: const BorderRadius.vertical(top: Radius.circular(24)),
                   ),
                   child: Center(
-                    child: Icon(LucideIcons.image, size: 48, color: color.withOpacity(0.3)),
+                    child: Image.asset(
+                      'assets/logo-zenleader.webp',
+                      width: 80,
+                      height: 80,
+                      fit: BoxFit.contain,
+                    ),
                   ),
                 ),
                 Positioned(

@@ -7,6 +7,7 @@ import 'package:zen_leader/screens/profile_screen.dart';
 import 'package:zen_leader/screens/explore_screen.dart';
 import 'package:zen_leader/screens/leaderboard_screen.dart';
 import 'package:zen_leader/screens/forum_screen.dart';
+import 'package:zen_leader/screens/onboarding_screen.dart';
 
 void main() {
   runApp(const ZenLeaderApp());
@@ -28,7 +29,7 @@ class ZenLeaderApp extends StatelessWidget {
         ),
         useMaterial3: true,
       ),
-      home: const MainNavigation(),
+      home: const OnboardingScreen(),
     );
   }
 }
