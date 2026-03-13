@@ -12,7 +12,7 @@ class MessagesScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
-        title: Text("TIN NHẮN", style: GoogleFonts.fredoka(fontWeight: FontWeight.bold)),
+        title: Text("MESSAGES", style: GoogleFonts.fredoka(fontWeight: FontWeight.bold)),
         centerTitle: true,
         backgroundColor: Colors.white,
         elevation: 0,
@@ -35,7 +35,7 @@ class MessagesScreen extends StatelessWidget {
               ),
               child: TextField(
                 decoration: InputDecoration(
-                  hintText: "Tìm kiếm cuộc hội thoại...",
+                  hintText: "Search conversations...",
                   hintStyle: GoogleFonts.nunito(color: Colors.grey),
                   border: InputBorder.none,
                   icon: const Icon(LucideIcons.search, color: Colors.grey, size: 20),
@@ -48,34 +48,34 @@ class MessagesScreen extends StatelessWidget {
               children: [
                 _buildChatItem(
                   context,
-                  name: "Thầy Minh Niệm",
-                  msg: "Cảm ơn em, chúc em tinh tấn.",
+                  name: "Instructor",
+                  msg: "Thank you, keep up the practice.",
                   time: "10:15 AM",
-                  status: "Giảng viên",
+                  status: "Instructor",
                   unread: 2,
                 ),
                 _buildChatItem(
                   context,
-                  name: "Nhóm Lớp Master 1",
-                  msg: "Nam: Sáng mai mọi người thiền lúc mấy giờ?",
+                  name: "Master 1 Group",
+                  msg: "When is everyone meditating tomorrow?",
                   time: "8:30 AM",
-                  status: "Nhóm lớp",
+                  status: "Group",
                   unread: 0,
                 ),
                 _buildChatItem(
                   context,
-                  name: "Mentor Duy Khanh",
-                  msg: "Tôi đã nhận được bài tập của bạn.",
-                  time: "Hôm qua",
+                  name: "Mentor",
+                  msg: "I've received your assignment.",
+                  time: "Yesterday",
                   status: "Mentor",
                   unread: 0,
                 ),
                 _buildChatItem(
                   context,
-                  name: "Khánh Linh",
-                  msg: "Cậu có online không?",
-                  time: "Hôm kia",
-                  status: "Bạn học",
+                  name: "Peer",
+                  msg: "Are you online?",
+                  time: "2 days ago",
+                  status: "Peer",
                   unread: 1,
                 ),
               ],
@@ -94,7 +94,7 @@ class MessagesScreen extends StatelessWidget {
     required String status,
     required int unread,
   }) {
-    Color statusColor = status == "Giảng viên" 
+    Color statusColor = status == "Instructor" 
         ? AppColors.teal 
         : (status == "Mentor" ? AppColors.primaryBlue : Colors.grey);
 

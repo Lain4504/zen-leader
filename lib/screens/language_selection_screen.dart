@@ -11,11 +11,11 @@ class LanguageSelectionScreen extends StatefulWidget {
 }
 
 class _LanguageSelectionScreenState extends State<LanguageSelectionScreen> {
-  String _selectedLanguage = "Tiếng Việt";
+  String _selectedLanguage = "English";
 
   final List<Map<String, String>> _languages = [
-    {"name": "Tiếng Việt", "flag": "🇻🇳", "native": "Tiếng Việt"},
     {"name": "English", "flag": "🇺🇸", "native": "English"},
+    {"name": "Tiếng Việt", "flag": "🇻🇳", "native": "Tiếng Việt"},
     {"name": "Japanese", "flag": "🇯🇵", "native": "日本語"},
     {"name": "Korean", "flag": "🇰🇷", "native": "한국어"},
     {"name": "French", "flag": "🇫🇷", "native": "Français"},
@@ -43,7 +43,7 @@ class _LanguageSelectionScreenState extends State<LanguageSelectionScreen> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  "Chọn ngôn ngữ của bạn",
+                  "Choose your language",
                   style: GoogleFonts.fredoka(
                     fontSize: 28,
                     fontWeight: FontWeight.bold,
@@ -52,7 +52,7 @@ class _LanguageSelectionScreenState extends State<LanguageSelectionScreen> {
                 ),
                 const SizedBox(height: 8),
                 Text(
-                  "Chọn ngôn ngữ bạn muốn sử dụng trong ứng dụng",
+                  "Choose the language you want to use in the app",
                   style: GoogleFonts.nunito(
                     fontSize: 16,
                     color: Colors.grey,
@@ -74,7 +74,7 @@ class _LanguageSelectionScreenState extends State<LanguageSelectionScreen> {
                   ),
                   child: TextField(
                     decoration: InputDecoration(
-                      hintText: "Tìm kiếm ngôn ngữ...",
+                      hintText: "Search language...",
                       hintStyle: GoogleFonts.nunito(color: Colors.grey),
                       border: InputBorder.none,
                       icon: const Icon(LucideIcons.search, color: Colors.grey, size: 20),
@@ -181,7 +181,7 @@ class _LanguageSelectionScreenState extends State<LanguageSelectionScreen> {
           elevation: 0,
         ),
         child: Text(
-          "TIẾP TỤC",
+          "CONTINUE",
           style: GoogleFonts.fredoka(
             fontWeight: FontWeight.bold,
             color: Colors.white,

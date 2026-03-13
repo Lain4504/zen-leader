@@ -18,7 +18,7 @@ class SettingsScreen extends StatelessWidget {
           onPressed: () => Navigator.pop(context),
         ),
         title: Text(
-          "CÀI ĐẶT",
+          "SETTINGS",
           style: GoogleFonts.fredoka(fontWeight: FontWeight.bold, fontSize: 18, color: AppColors.accentDark),
         ),
         centerTitle: true,
@@ -26,26 +26,26 @@ class SettingsScreen extends StatelessWidget {
       body: ListView(
         padding: const EdgeInsets.all(24),
         children: [
-          _buildSettingsSection("ỨNG DỤNG", [
-            _buildSettingsItem(LucideIcons.moon, "Chế độ tối", hasSwitch: true),
-            _buildSettingsItem(LucideIcons.bell, "Thông báo nhấn", hasSwitch: true),
-            _buildSettingsItem(LucideIcons.clock, "Nhắc nhở học tập", hasSwitch: true),
+          _buildSettingsSection("APP", [
+            _buildSettingsItem(LucideIcons.moon, "Dark mode", hasSwitch: true),
+            _buildSettingsItem(LucideIcons.bell, "Push notifications", hasSwitch: true),
+            _buildSettingsItem(LucideIcons.clock, "Study reminders", hasSwitch: true),
           ]),
           const SizedBox(height: 32),
-          _buildSettingsSection("KHOẢN VÀ BẢO MẬT", [
-            _buildSettingsItem(LucideIcons.shieldCheck, "Quyền riêng tư"),
-            _buildSettingsItem(LucideIcons.lock, "Đổi mật khẩu"),
-            _buildSettingsItem(LucideIcons.trash2, "Xóa tài khoản", isDestructive: true),
+          _buildSettingsSection("ACCOUNT & PRIVACY", [
+            _buildSettingsItem(LucideIcons.shieldCheck, "Privacy"),
+            _buildSettingsItem(LucideIcons.lock, "Change password"),
+            _buildSettingsItem(LucideIcons.trash2, "Delete account", isDestructive: true),
           ]),
           const SizedBox(height: 32),
-          _buildSettingsSection("HỖ TRỢ", [
-            _buildSettingsItem(LucideIcons.helpCircle, "Trung tâm trợ giúp"),
-            _buildSettingsItem(LucideIcons.fileText, "Điều khoản dịch vụ"),
+          _buildSettingsSection("SUPPORT", [
+            _buildSettingsItem(LucideIcons.helpCircle, "Help center"),
+            _buildSettingsItem(LucideIcons.fileText, "Terms of service"),
           ]),
           const SizedBox(height: 48),
           Center(
             child: Text(
-              "Phiên bản 1.0.2 (Build 45)",
+              "Version 1.0.2 (Build 45)",
               style: GoogleFonts.nunito(color: Colors.grey, fontSize: 12),
             ),
           ),

@@ -11,7 +11,7 @@ class LeaderboardScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: AppColors.background,
       appBar: AppBar(
-        title: Text("BẢNG XẾP HẠNG", style: GoogleFonts.fredoka(fontWeight: FontWeight.bold)),
+        title: Text("LEADERBOARD", style: GoogleFonts.fredoka(fontWeight: FontWeight.bold)),
         centerTitle: true,
         backgroundColor: Colors.white,
         elevation: 0,
@@ -47,9 +47,9 @@ class LeaderboardScreen extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         crossAxisAlignment: CrossAxisAlignment.end,
         children: [
-          _buildPodiumIcon("Lâm Vũ", "2,450 XP", "2", 80),
-          _buildPodiumIcon("Hoàng Nam", "3,120 XP", "1", 110, isFirst: true),
-          _buildPodiumIcon("Minh Thu", "2,100 XP", "3", 80),
+          _buildPodiumIcon("Alex", "2,450 XP", "2", 80),
+          _buildPodiumIcon("Jordan", "3,120 XP", "1", 110, isFirst: true),
+          _buildPodiumIcon("Sam", "2,100 XP", "3", 80),
         ],
       ),
     );

@@ -34,14 +34,14 @@ class HomeScreen extends StatelessWidget {
                         children: [
                           _buildPremiumNode(
                             icon: LucideIcons.compass,
-                            title: "Lãnh đạo bản thân",
+                            title: "Self leadership",
                             status: NodeStatus.completed,
                             context: context,
                           ),
                           const SizedBox(height: 80),
                           _buildPremiumNode(
                             icon: LucideIcons.batteryCharging,
-                            title: "Quản trị năng lượng",
+                            title: "Energy management",
                             status: NodeStatus.completed,
                             offset: 60,
                             context: context,
@@ -49,7 +49,7 @@ class HomeScreen extends StatelessWidget {
                           const SizedBox(height: 80),
                           _buildPremiumNode(
                             icon: LucideIcons.target,
-                            title: "Thiền định",
+                            title: "Meditation",
                             status: NodeStatus.active,
                             offset: -60,
                             context: context,
@@ -57,14 +57,14 @@ class HomeScreen extends StatelessWidget {
                           const SizedBox(height: 80),
                           _buildPremiumNode(
                             icon: LucideIcons.users,
-                            title: "Lãnh đạo đội ngũ",
+                            title: "Team leadership",
                             status: NodeStatus.locked,
                             context: context,
                           ),
                           const SizedBox(height: 80),
                           _buildPremiumNode(
                             icon: LucideIcons.heart,
-                            title: "Lãnh đạo từ tâm",
+                            title: "Heart-centered leadership",
                             status: NodeStatus.locked,
                             offset: 60,
                             context: context,

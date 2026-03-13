@@ -100,14 +100,14 @@ class _LiveMeetingScreenState extends State<LiveMeetingScreen> {
               borderRadius: BorderRadius.circular(8),
             ),
             child: Text(
-              "TRỰC TIẾP",
+              "LIVE",
               style: GoogleFonts.fredoka(color: Colors.white, fontSize: 10, fontWeight: FontWeight.bold),
             ),
           ),
           const SizedBox(width: 12),
           Expanded(
             child: Text(
-              "Khai phóng tiềm năng lãnh đạo",
+              "Unlock your leadership potential",
               style: GoogleFonts.nunito(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 16),
               overflow: TextOverflow.ellipsis,
             ),
@@ -183,15 +183,15 @@ class _LiveMeetingScreenState extends State<LiveMeetingScreen> {
               padding: const EdgeInsets.all(24),
               child: Column(
                 children: [
-                  Text("CUỘC TRÒ CHUYỆN", style: GoogleFonts.fredoka(fontWeight: FontWeight.bold, fontSize: 18)),
+                  Text("CONVERSATION", style: GoogleFonts.fredoka(fontWeight: FontWeight.bold, fontSize: 18)),
                   const SizedBox(height: 24),
                   Expanded(
                     child: ListView(
                       controller: scrollController,
                       children: [
-                        _buildChatItem("Học viên A", "Thầy ơi cho con hỏi làm sao để bớt lo âu?"),
-                        _buildChatItem("Học viên B", "Bải giảng hay quá ạ!"),
-                        _buildChatItem("Học viên C", "Cảm ơn thầy và ban tổ chức."),
+                        _buildChatItem("Student A", "How can I reduce anxiety?"),
+                        _buildChatItem("Student B", "Great session!"),
+                        _buildChatItem("Student C", "Thank you and the team."),
                       ],
                     ),
                   ),
@@ -231,7 +231,7 @@ class _LiveMeetingScreenState extends State<LiveMeetingScreen> {
         children: [
           Expanded(
             child: TextField(
-              decoration: InputDecoration(hintText: "Nhập tin nhắn...", border: InputBorder.none, hintStyle: GoogleFonts.nunito(fontSize: 14)),
+              decoration: InputDecoration(hintText: "Type a message...", border: InputBorder.none, hintStyle: GoogleFonts.nunito(fontSize: 14)),
             ),
           ),
           const Icon(LucideIcons.send, color: AppColors.primaryBlue, size: 20),

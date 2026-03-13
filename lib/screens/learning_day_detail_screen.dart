@@ -21,7 +21,7 @@ class LearningDayDetailScreen extends StatelessWidget {
           onPressed: () => Navigator.pop(context),
         ),
         title: Text(
-          "NGÀY 5: GIAO TIẾP TỈNH THỨC",
+          "DAY 5: MINDFUL COMMUNICATION",
           style: GoogleFonts.fredoka(fontWeight: FontWeight.bold, fontSize: 16, color: AppColors.accentDark),
         ),
         centerTitle: true,
@@ -35,32 +35,32 @@ class LearningDayDetailScreen extends StatelessWidget {
               children: [
                 _buildLiveSessionCard(context),
                 const SizedBox(height: 24),
-                _buildSectionHeader("NỘI DUNG HỌC TẬP"),
+                _buildSectionHeader("LEARNING CONTENT"),
                 const SizedBox(height: 16),
                 _buildMaterialCard(
-                  title: "Video: Nguyên lý lắng nghe",
-                  duration: "15 phút",
+                  title: "Video: Principles of deep listening",
+                  duration: "15 min",
                   icon: LucideIcons.playCircle,
                   status: MaterialStatus.completed,
-                  onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => const VideoPlayerScreen(title: "Nguyên lý lắng nghe"))),
+                  onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => const VideoPlayerScreen(title: "Principles of deep listening"))),
                 ),
                 _buildMaterialCard(
-                  title: "Tài liệu: Thực hành sâu",
-                  duration: "10 phút",
+                  title: "Document: Deep practice",
+                  duration: "10 min",
                   icon: LucideIcons.fileText,
                   status: MaterialStatus.available,
                   onTap: () {},
                 ),
                 _buildMaterialCard(
-                  title: "Bài tập: Rèn luyện tâm trí",
-                  duration: "20 phút",
+                  title: "Exercise: Mind training",
+                  duration: "20 min",
                   icon: LucideIcons.edit3,
                   status: MaterialStatus.available,
                   onTap: () {},
                 ),
                 _buildMaterialCard(
-                  title: "Luyện tập: Quiz kiến thức",
-                  duration: "5 phút",
+                  title: "Quiz: Knowledge check",
+                  duration: "5 min",
                   icon: LucideIcons.helpCircle,
                   status: MaterialStatus.available,
                   onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => const LessonScreen())),
@@ -84,7 +84,7 @@ class LearningDayDetailScreen extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text(
-                "Tiến độ hoàn thành",
+                "Completion progress",
                 style: GoogleFonts.nunito(color: Colors.grey, fontSize: 13, fontWeight: FontWeight.bold),
               ),
               Text(
@@ -144,7 +144,7 @@ class LearningDayDetailScreen extends StatelessWidget {
           ),
           const SizedBox(height: 16),
           Text(
-            "Lớp học trực tuyến live",
+            "Live online class",
             style: GoogleFonts.fredoka(color: Colors.white, fontSize: 20, fontWeight: FontWeight.bold),
           ),
           const SizedBox(height: 8),
@@ -152,9 +152,9 @@ class LearningDayDetailScreen extends StatelessWidget {
             children: [
               const CircleAvatar(radius: 12, backgroundColor: Colors.white24, child: Icon(LucideIcons.user, size: 14, color: Colors.white)),
               const SizedBox(width: 8),
-              Text("Thầy Minh Niệm", style: GoogleFonts.nunito(color: Colors.white, fontWeight: FontWeight.bold)),
+              Text("Instructor", style: GoogleFonts.nunito(color: Colors.white, fontWeight: FontWeight.bold)),
               const Spacer(),
-              Text("45 phút", style: GoogleFonts.nunito(color: Colors.white70, fontSize: 12)),
+              Text("45 min", style: GoogleFonts.nunito(color: Colors.white70, fontSize: 12)),
             ],
           ),
           const SizedBox(height: 24),
@@ -169,7 +169,7 @@ class LearningDayDetailScreen extends StatelessWidget {
               elevation: 0,
             ),
             child: Text(
-              "THAM GIA NGAY",
+              "JOIN NOW",
               style: GoogleFonts.fredoka(color: AppColors.primaryBlue, fontWeight: FontWeight.bold),
             ),
           ),

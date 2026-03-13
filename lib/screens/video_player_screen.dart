@@ -144,7 +144,7 @@ class _VideoPlayerScreenState extends State<VideoPlayerScreen> {
                     borderRadius: BorderRadius.circular(8),
                   ),
                   child: Text(
-                    "ĐANG PHÁT",
+                    "PLAYING",
                     style: GoogleFonts.fredoka(color: AppColors.primaryBlue, fontSize: 10, fontWeight: FontWeight.bold),
                   ),
                 ),
@@ -164,21 +164,21 @@ class _VideoPlayerScreenState extends State<VideoPlayerScreen> {
               children: [
                 const CircleAvatar(radius: 12, backgroundColor: Colors.grey, child: Icon(LucideIcons.user, size: 14, color: Colors.white)),
                 const SizedBox(width: 8),
-                Text("Thầy Minh Niệm", style: GoogleFonts.nunito(fontWeight: FontWeight.bold)),
+                Text("Instructor", style: GoogleFonts.nunito(fontWeight: FontWeight.bold)),
                 const Spacer(),
-                Text("1.5k lượt xem", style: GoogleFonts.nunito(color: Colors.grey, fontSize: 12)),
+                Text("1.5k views", style: GoogleFonts.nunito(color: Colors.grey, fontSize: 12)),
               ],
             ),
             const SizedBox(height: 24),
             Text(
-              "Ghi chú bài học",
+              "Lesson notes",
               style: GoogleFonts.fredoka(fontWeight: FontWeight.bold, color: AppColors.accentDark),
             ),
             const SizedBox(height: 8),
             Expanded(
               child: SingleChildScrollView(
                 child: Text(
-                  "Trong bài học này, Thầy Minh Niệm sẽ hướng dẫn cách nhận diện những rào cản trong việc lắng nghe. Lắng nghe không chỉ bằng đôi tai, mà còn bằng cả trái tim và sự hiện diện trọn vẹn của chúng ta...",
+                  "In this lesson you'll learn to identify barriers to listening. Listening is not only with the ears but with the heart and full presence...",
                   style: GoogleFonts.nunito(color: Colors.grey, height: 1.6),
                 ),
               ),
@@ -193,7 +193,7 @@ class _VideoPlayerScreenState extends State<VideoPlayerScreen> {
                 minimumSize: const Size(double.infinity, 50),
                 shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
               ),
-              child: Text("HOÀN THÀNH BÀI HỌC", style: GoogleFonts.fredoka(color: Colors.white, fontWeight: FontWeight.bold)),
+              child: Text("COMPLETE LESSON", style: GoogleFonts.fredoka(color: Colors.white, fontWeight: FontWeight.bold)),
             ),
           ],
         ),

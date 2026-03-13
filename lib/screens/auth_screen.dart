@@ -20,6 +20,13 @@ class _AuthScreenState extends State<AuthScreen> with SingleTickerProviderStateM
     _tabController = TabController(length: 2, vsync: this);
   }
 
+  void _goToHome() {
+    Navigator.pushReplacement(
+      context,
+      MaterialPageRoute(builder: (context) => const MainNavigation()),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -30,7 +37,22 @@ class _AuthScreenState extends State<AuthScreen> with SingleTickerProviderStateM
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const SizedBox(height: 80),
+              const SizedBox(height: 48),
+              Align(
+                alignment: Alignment.centerRight,
+                child: TextButton(
+                  onPressed: _goToHome,
+                  child: Text(
+                    "Skip to Home",
+                    style: GoogleFonts.nunito(
+                      color: AppColors.primaryBlue,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 14,
+                    ),
+                  ),
+                ),
+              ),
+              const SizedBox(height: 24),
               Center(
                 child: Column(
                   children: [
@@ -52,7 +74,7 @@ class _AuthScreenState extends State<AuthScreen> with SingleTickerProviderStateM
                     ),
                     const SizedBox(height: 32),
                     Text(
-                      "Chào bạn, Tỉnh thức thôi!",
+                      "Log in to IZL Community Hub",
                       textAlign: TextAlign.center,
                       style: GoogleFonts.fredoka(
                         fontSize: 26,
@@ -63,7 +85,7 @@ class _AuthScreenState extends State<AuthScreen> with SingleTickerProviderStateM
                     ),
                     const SizedBox(height: 12),
                     Text(
-                      "Hành trình lãnh đạo từ tâm bắt đầu từ đây.",
+                      "Your journey in heart-centered leadership starts here.",
                       style: GoogleFonts.nunito(color: Colors.grey, fontSize: 14),
                     ),
                   ],
@@ -106,8 +128,8 @@ class _AuthScreenState extends State<AuthScreen> with SingleTickerProviderStateM
         labelStyle: GoogleFonts.fredoka(fontWeight: FontWeight.bold, fontSize: 16),
         unselectedLabelStyle: GoogleFonts.nunito(fontWeight: FontWeight.bold, fontSize: 16),
         tabs: const [
-          Tab(text: "Đăng nhập"),
-          Tab(text: "Đăng ký"),
+          Tab(text: "Log in"),
+          Tab(text: "Sign up"),
         ],
         onTap: (index) => setState(() {}),
       ),
@@ -117,22 +139,22 @@ class _AuthScreenState extends State<AuthScreen> with SingleTickerProviderStateM
   Widget _buildLoginForm() {
     return Column(
       children: [
-        _buildInputField("Email / Tên đăng nhập", LucideIcons.mail),
+        _buildInputField("Email / Username", LucideIcons.mail),
         const SizedBox(height: 16),
-        _buildInputField("Mật khẩu", LucideIcons.lock, isPassword: true),
+        _buildInputField("Password", LucideIcons.lock, isPassword: true),
         const SizedBox(height: 12),
         Align(
           alignment: Alignment.centerRight,
           child: TextButton(
             onPressed: () {},
             child: Text(
-              "Quên mật khẩu?",
+              "Lost password?",
               style: GoogleFonts.nunito(color: AppColors.primaryBlue, fontWeight: FontWeight.bold, fontSize: 13),
             ),
           ),
         ),
         const SizedBox(height: 24),
-        _buildPrimaryButton("BẮT ĐẦU HÀNH TRÌNH"),
+        _buildPrimaryButton("START YOUR JOURNEY"),
       ],
     );
   }
@@ -140,13 +162,13 @@ class _AuthScreenState extends State<AuthScreen> with SingleTickerProviderStateM
   Widget _buildSignUpForm() {
     return Column(
       children: [
-        _buildInputField("Họ và Tên", LucideIcons.user),
+        _buildInputField("Full name", LucideIcons.user),
         const SizedBox(height: 16),
-        _buildInputField("Email cá nhân", LucideIcons.mail),
+        _buildInputField("Email", LucideIcons.mail),
         const SizedBox(height: 16),
-        _buildInputField("Mật khẩu mới", LucideIcons.lock, isPassword: true),
+        _buildInputField("New password", LucideIcons.lock, isPassword: true),
         const SizedBox(height: 32),
-        _buildPrimaryButton("TẠO TÀI KHOẢN"),
+        _buildPrimaryButton("CREATE ACCOUNT"),
       ],
     );
   }
@@ -207,7 +229,7 @@ class _AuthScreenState extends State<AuthScreen> with SingleTickerProviderStateM
             Expanded(child: Divider(color: Colors.grey.withOpacity(0.15))),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 16),
-              child: Text("Đăng nhập nhanh với", style: GoogleFonts.nunito(color: Colors.grey, fontSize: 12, fontWeight: FontWeight.bold)),
+              child: Text("Log in with", style: GoogleFonts.nunito(color: Colors.grey, fontSize: 12, fontWeight: FontWeight.bold)),
             ),
             Expanded(child: Divider(color: Colors.grey.withOpacity(0.15))),
           ],

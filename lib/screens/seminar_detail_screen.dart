@@ -24,7 +24,7 @@ class SeminarDetailScreen extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        "Khai phóng tiềm năng lãnh đạo",
+                        "Unlock your leadership potential",
                         style: GoogleFonts.nunito(
                           fontSize: 26,
                           fontWeight: FontWeight.w800,
@@ -112,7 +112,7 @@ class SeminarDetailScreen extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              "Thầy Minh Niệm",
+              "Instructor",
               style: GoogleFonts.nunito(
                 fontWeight: FontWeight.bold,
                 fontSize: 18,
@@ -172,7 +172,7 @@ class SeminarDetailScreen extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
-          "GIỚI THIỆU HỘI THẢO",
+          "SEMINAR OVERVIEW",
           style: GoogleFonts.fredoka(
             fontSize: 14,
             fontWeight: FontWeight.bold,
@@ -182,7 +182,7 @@ class SeminarDetailScreen extends StatelessWidget {
         ),
         const SizedBox(height: 12),
         Text(
-          "Buổi hội thảo tập trung vào việc đánh thức năng lực lãnh đạo tự thân thông qua thiền định và quan sát nội tâm. Học viên sẽ được trang bị các công cụ để giữ vững tâm thế trong môi trường kinh doanh biến động.",
+          "This seminar focuses on awakening your inner leadership through meditation and self-observation. You'll get practical tools to stay grounded in fast-changing business environments.",
           style: GoogleFonts.nunito(
             fontSize: 16,
             height: 1.6,
@@ -195,17 +195,17 @@ class SeminarDetailScreen extends StatelessWidget {
 
   Widget _buildTopicsSection() {
     final topics = [
-      "Thấu hiểu bản thân thông qua quan sát",
-      "Quản trị cảm xúc trong đàm phán",
-      "Xây dựng văn hóa tỉnh thức tại doanh nghiệp",
-      "Kỹ thuật thiền ứng dụng cho lãnh đạo"
+      "Self-understanding through observation",
+      "Emotional management in negotiation",
+      "Building a mindful culture at work",
+      "Applied meditation techniques for leaders"
     ];
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
-          "CHỦ ĐỀ CHÍNH",
+          "MAIN TOPICS",
           style: GoogleFonts.fredoka(
             fontSize: 14,
             fontWeight: FontWeight.bold,
@@ -264,7 +264,7 @@ class SeminarDetailScreen extends StatelessWidget {
             shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
           ),
           child: Text(
-            "THAM GIA HỘI THẢO",
+            "JOIN SEMINAR",
             style: GoogleFonts.fredoka(
               color: Colors.white,
               fontWeight: FontWeight.bold,

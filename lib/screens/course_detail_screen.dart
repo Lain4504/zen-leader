@@ -90,13 +90,13 @@ class CourseDetailScreen extends StatelessWidget {
               borderRadius: BorderRadius.circular(8),
             ),
             child: Text(
-              "BÁN CHẠY NHẤT",
+              "BEST SELLER",
               style: GoogleFonts.fredoka(color: AppColors.primaryBlue, fontSize: 10, fontWeight: FontWeight.bold),
             ),
           ),
           const SizedBox(height: 12),
           Text(
-            "Lãnh đạo bằng sự thấu cảm",
+            "Leading with empathy",
             style: GoogleFonts.fredoka(fontSize: 24, fontWeight: FontWeight.bold, color: AppColors.accentDark),
           ),
           const SizedBox(height: 16),
@@ -104,7 +104,7 @@ class CourseDetailScreen extends StatelessWidget {
             children: [
               const CircleAvatar(radius: 12, backgroundColor: Colors.grey, child: Icon(LucideIcons.user, size: 14, color: Colors.white)),
               const SizedBox(width: 8),
-              Text("Thầy Minh Niệm", style: GoogleFonts.nunito(fontWeight: FontWeight.bold, fontSize: 14)),
+              Text("Instructor", style: GoogleFonts.nunito(fontWeight: FontWeight.bold, fontSize: 14)),
               const Spacer(),
               const Icon(Icons.star, color: Colors.amber, size: 18),
               const SizedBox(width: 4),
@@ -112,7 +112,7 @@ class CourseDetailScreen extends StatelessWidget {
               const SizedBox(width: 12),
               const Icon(LucideIcons.users, color: Colors.grey, size: 18),
               const SizedBox(width: 4),
-              Text("1.5k Học viên", style: GoogleFonts.nunito(color: Colors.grey, fontSize: 13)),
+              Text("1.5k Students", style: GoogleFonts.nunito(color: Colors.grey, fontSize: 13)),
             ],
           ),
         ],
@@ -131,23 +131,23 @@ class CourseDetailScreen extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          _buildSectionTitle("Tổng quan khóa học"),
+          _buildSectionTitle("Course overview"),
           const SizedBox(height: 12),
           Text(
-            "Khóa học giúp bạn làm chủ tâm trí, phát triển trí tuệ cảm xúc và xây dựng phong cách lãnh đạo từ tâm. Học cách lắng nghe sâu và thấu cảm với đội ngũ để tạo dựng niềm tin vững bền.",
+            "This course helps you master your mind, develop emotional intelligence and build heart-centered leadership. Learn deep listening and empathy with your team to build lasting trust.",
             style: GoogleFonts.nunito(color: Colors.grey, height: 1.6, fontSize: 14),
           ),
           const SizedBox(height: 20),
-          _buildSectionTitle("Kỹ năng đạt được"),
+          _buildSectionTitle("Skills you'll gain"),
           const SizedBox(height: 12),
           Wrap(
             spacing: 8,
             runSpacing: 8,
             children: [
-              _buildSkillChip("Lắng nghe sâu"),
-              _buildSkillChip("Quản trị cảm xúc"),
-              _buildSkillChip("Thấu cảm"),
-              _buildSkillChip("Tĩnh thức"),
+              _buildSkillChip("Deep listening"),
+              _buildSkillChip("Emotional management"),
+              _buildSkillChip("Empathy"),
+              _buildSkillChip("Mindfulness"),
             ],
           ),
         ],
@@ -166,12 +166,12 @@ class CourseDetailScreen extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          _buildSectionTitle("Nội dung lộ trình"),
+          _buildSectionTitle("Curriculum"),
           const SizedBox(height: 16),
-          _buildCurriculumItem("1. Video: Giới thiệu sự thấu cảm", "15 phút", LucideIcons.playCircle),
-          _buildCurriculumItem("2. Quiz: Nhận diện cảm xúc", "5 phút", LucideIcons.helpCircle),
-          _buildCurriculumItem("3. Practice: Bài tập thiền định", "10 phút", LucideIcons.pencil),
-          _buildCurriculumItem("4. Assignment: Thực hành thấu cảm", "20 phút", LucideIcons.fileText),
+          _buildCurriculumItem("1. Video: Introduction to empathy", "15 min", LucideIcons.playCircle),
+          _buildCurriculumItem("2. Quiz: Recognizing emotions", "5 min", LucideIcons.helpCircle),
+          _buildCurriculumItem("3. Practice: Meditation exercises", "10 min", LucideIcons.pencil),
+          _buildCurriculumItem("4. Assignment: Empathy practice", "20 min", LucideIcons.fileText),
         ],
       ),
     );
@@ -217,7 +217,7 @@ class CourseDetailScreen extends StatelessWidget {
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text("PHẦN THƯỞNG HOÀN THÀNH", style: GoogleFonts.fredoka(color: AppColors.primaryBlue, fontSize: 10, fontWeight: FontWeight.bold)),
+              Text("COMPLETION REWARD", style: GoogleFonts.fredoka(color: AppColors.primaryBlue, fontSize: 10, fontWeight: FontWeight.bold)),
               const SizedBox(height: 8),
               Row(
                 children: [
@@ -280,7 +280,7 @@ class CourseDetailScreen extends StatelessWidget {
           elevation: 0,
         ),
         child: Text(
-          "BẮT ĐẦU HỌC NGAY",
+          "START LEARNING NOW",
           style: GoogleFonts.fredoka(fontWeight: FontWeight.bold, color: Colors.white, fontSize: 16),
         ),
       ),

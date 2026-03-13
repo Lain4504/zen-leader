@@ -38,8 +38,8 @@ class ChatDetailScreen extends StatelessWidget {
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text("Thầy Minh Niệm", style: GoogleFonts.nunito(fontWeight: FontWeight.bold, fontSize: 16, color: AppColors.accentDark)),
-                Text("Đang trực tuyến", style: GoogleFonts.nunito(fontSize: 11, color: Colors.green, fontWeight: FontWeight.bold)),
+                Text("Instructor", style: GoogleFonts.nunito(fontWeight: FontWeight.bold, fontSize: 16, color: AppColors.accentDark)),
+                Text("Online", style: GoogleFonts.nunito(fontSize: 11, color: Colors.green, fontWeight: FontWeight.bold)),
               ],
             ),
           ],
@@ -52,18 +52,18 @@ class ChatDetailScreen extends StatelessWidget {
               padding: const EdgeInsets.all(24),
               children: [
                 _buildMessage(
-                  "Chào Thầy, con có một thắc mắc về bài giảng sáng nay ạ.",
+                  "Hi, I have a question about this morning's lesson.",
                   true,
                   "10:00 AM",
                 ),
                 _buildMessage(
-                  "Chào con, con cứ nói nhé. Thầy đang nghe đây.",
+                  "Hi, go ahead. I'm listening.",
                   false,
                   "10:05 AM",
                 ),
                 _buildSharedLessonCard(),
                 _buildMessage(
-                  "Con đã xem lại bài 'Thiền định cơ bản' như Thầy dặn chưa?",
+                  "Have you watched the 'Basic meditation' lesson as we discussed?",
                   false,
                   "10:10 AM",
                 ),
@@ -147,9 +147,9 @@ class ChatDetailScreen extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text("BÀI HỌC CHIA SẺ", style: GoogleFonts.fredoka(color: AppColors.primaryBlue, fontSize: 10, fontWeight: FontWeight.bold)),
+                  Text("SHARED LESSON", style: GoogleFonts.fredoka(color: AppColors.primaryBlue, fontSize: 10, fontWeight: FontWeight.bold)),
                   const SizedBox(height: 4),
-                  Text("Thiền định cơ bản cho người mới", style: GoogleFonts.nunito(fontWeight: FontWeight.bold, fontSize: 14)),
+                  Text("Basic meditation for beginners", style: GoogleFonts.nunito(fontWeight: FontWeight.bold, fontSize: 14)),
                   const SizedBox(height: 8),
                   ElevatedButton(
                     onPressed: () {},
@@ -159,7 +159,7 @@ class ChatDetailScreen extends StatelessWidget {
                       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
                       elevation: 0,
                     ),
-                    child: Text("Xem ngay", style: GoogleFonts.fredoka(color: Colors.white, fontSize: 12)),
+                    child: Text("Watch now", style: GoogleFonts.fredoka(color: Colors.white, fontSize: 12)),
                   ),
                 ],
               ),
@@ -189,7 +189,7 @@ class ChatDetailScreen extends StatelessWidget {
                 ),
                 child: TextField(
                   decoration: InputDecoration(
-                    hintText: "Nhập tin nhắn...",
+                    hintText: "Type a message...",
                     hintStyle: GoogleFonts.nunito(fontSize: 14, color: Colors.grey),
                     border: InputBorder.none,
                   ),

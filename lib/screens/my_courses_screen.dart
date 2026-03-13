@@ -15,7 +15,7 @@ class MyCoursesScreen extends StatelessWidget {
           backgroundColor: Colors.white,
           elevation: 0,
           iconTheme: const IconThemeData(color: AppColors.accentDark),
-          title: Text("KHÓA HỌC", style: GoogleFonts.fredoka(fontWeight: FontWeight.bold)),
+          title: Text("COURSES", style: GoogleFonts.fredoka(fontWeight: FontWeight.bold)),
           centerTitle: true,
           bottom: TabBar(
             indicatorColor: AppColors.primaryBlue,
@@ -24,8 +24,8 @@ class MyCoursesScreen extends StatelessWidget {
             unselectedLabelColor: Colors.grey,
             labelStyle: GoogleFonts.fredoka(fontWeight: FontWeight.bold),
             tabs: const [
-              Tab(text: "Đang học"),
-              Tab(text: "Hoàn thành"),
+              Tab(text: "In progress"),
+              Tab(text: "Completed"),
             ],
           ),
         ),
@@ -44,20 +44,20 @@ class MyCoursesScreen extends StatelessWidget {
       padding: const EdgeInsets.all(24),
       children: [
         _buildPremiumCourseCard(
-          "Lãnh đạo từ tâm",
-          "Thầy Minh Niệm",
+          "Lead from within",
+          "Instructor",
           0.75,
           isCompleted,
         ),
         _buildPremiumCourseCard(
-          "Thiền định cho doanh nhân",
-          "Mentor Duy Khanh",
+          "Meditation for professionals",
+          "Mentor",
           0.30,
           isCompleted,
         ),
         if (isCompleted)
           _buildPremiumCourseCard(
-            "Tư duy tỉnh thức",
+            "Mindful thinking",
             "Giảng viên Cao Anh",
             1.0,
             true,
@@ -136,7 +136,7 @@ class MyCoursesScreen extends StatelessWidget {
                       elevation: 0,
                     ),
                     child: Text(
-                      "TIẾP TỤC HỌC",
+                      "CONTINUE LEARNING",
                       style: GoogleFonts.fredoka(fontWeight: FontWeight.bold, color: Colors.white),
                     ),
                   ),
@@ -149,7 +149,7 @@ class MyCoursesScreen extends StatelessWidget {
                       side: const BorderSide(color: AppColors.primaryBlue),
                     ),
                     child: Text(
-                      "XEM CHỨNG CHỈ",
+                      "VIEW CERTIFICATE",
                       style: GoogleFonts.fredoka(fontWeight: FontWeight.bold, color: AppColors.primaryBlue),
                     ),
                   ),

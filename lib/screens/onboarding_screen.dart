@@ -16,18 +16,18 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
 
   final List<OnboardingData> _onboardingData = [
     OnboardingData(
-      title: "Tìm lại sự tĩnh tại",
-      subtitle: "Thực hành thiền mỗi ngày để làm chủ tâm trí",
+      title: "Find your calm",
+      subtitle: "Practice daily to master your mind",
       image: "https://images.unsplash.com/photo-1506126613408-eca07ce68773?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
     ),
     OnboardingData(
-      title: "Lãnh đạo từ tâm",
-      subtitle: "Phát triển kỹ năng quản trị và thấu cảm",
+      title: "Lead from within",
+      subtitle: "Develop leadership and empathy skills",
       image: "https://images.unsplash.com/photo-1517048676732-d65bc937f952?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
     ),
     OnboardingData(
-      title: "Cùng nhau tiến bước",
-      subtitle: "Tham gia cộng đồng Zen Leaders toàn cầu",
+      title: "Move forward together",
+      subtitle: "Join the global IZL Community Hub",
       image: "https://images.unsplash.com/photo-1511632765486-a01980e01a18?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
     ),
   ];
@@ -62,7 +62,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
             child: TextButton(
               onPressed: () => _navigateToAuth(),
               child: Text(
-                "Bỏ qua",
+                "Skip",
                 style: GoogleFonts.nunito(color: Colors.grey, fontWeight: FontWeight.bold),
               ),
             ),
@@ -139,7 +139,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
               elevation: 0,
             ),
             child: Text(
-              _currentPage == _onboardingData.length - 1 ? "BẮT ĐẦU NGAY" : "TIẾP THEO",
+              _currentPage == _onboardingData.length - 1 ? "GET STARTED" : "NEXT",
               style: GoogleFonts.fredoka(fontWeight: FontWeight.bold, color: Colors.white, fontSize: 16),
             ),
           ),

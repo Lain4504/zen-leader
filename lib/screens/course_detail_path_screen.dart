@@ -48,7 +48,7 @@ class CourseDetailPathScreen extends StatelessWidget {
       iconTheme: const IconThemeData(color: Colors.white),
       flexibleSpace: FlexibleSpaceBar(
         title: Text(
-          "LÃNH ĐẠO TỪ TÂM",
+          "LEAD FROM WITHIN",
           style: GoogleFonts.fredoka(fontWeight: FontWeight.bold, fontSize: 18),
         ),
         background: Stack(
@@ -76,12 +76,12 @@ class CourseDetailPathScreen extends StatelessWidget {
   Widget _buildZigZagNodes(BuildContext context) {
     return Column(
       children: [
-        _buildPathNode(context, 1, "Khởi đầu tỉnh thức", true, 0),
-        _buildPathNode(context, 2, "Lắng nghe sâu", true, 60),
-        _buildPathNode(context, 3, "Thấu cảm đồng nghiệp", false, -60, isActive: true),
-        _buildPathNode(context, 4, "Giải quyết xung đột", false, 60, isLocked: true),
-        _buildPathNode(context, 5, "Xây dựng niềm tin", false, -60, isLocked: true),
-        _buildPathNode(context, 6, "Lãnh đạo bằng gương", false, 0, isLocked: true),
+        _buildPathNode(context, 1, "Begin with awareness", true, 0),
+        _buildPathNode(context, 2, "Deep listening", true, 60),
+        _buildPathNode(context, 3, "Empathy for colleagues", false, -60, isActive: true),
+        _buildPathNode(context, 4, "Resolving conflict", false, 60, isLocked: true),
+        _buildPathNode(context, 5, "Building trust", false, -60, isLocked: true),
+        _buildPathNode(context, 6, "Leading by example", false, 0, isLocked: true),
       ],
     );
   }
@@ -161,7 +161,7 @@ class CourseDetailPathScreen extends StatelessWidget {
           const Icon(LucideIcons.playCircle, color: Colors.white, size: 20),
           const SizedBox(width: 12),
           Text(
-            "GHI DANH NGAY",
+            "ENROLL NOW",
             style: GoogleFonts.fredoka(color: Colors.white, fontWeight: FontWeight.bold),
           ),
         ],

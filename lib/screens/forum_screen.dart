@@ -14,11 +14,11 @@ class ForumScreen extends StatefulWidget {
 class _ForumScreenState extends State<ForumScreen> {
   int _selectedCategoryIndex = 0;
   final List<String> _categories = [
-    "Thảo luận chung",
-    "Câu hỏi khóa học",
-    "Mẹo học tập",
-    "Sự nghiệp",
-    "Thông báo"
+    "General discussion",
+    "Course questions",
+    "Study tips",
+    "Career",
+    "Announcements"
   ];
 
   @override
@@ -26,7 +26,7 @@ class _ForumScreenState extends State<ForumScreen> {
     return Scaffold(
       backgroundColor: AppColors.background,
       appBar: AppBar(
-        title: Text("CỘNG ĐỒNG ZEN", style: GoogleFonts.fredoka(fontWeight: FontWeight.bold)),
+        title: Text("ZEN COMMUNITY", style: GoogleFonts.fredoka(fontWeight: FontWeight.bold)),
         centerTitle: true,
         backgroundColor: Colors.white,
         elevation: 0,
@@ -46,31 +46,31 @@ class _ForumScreenState extends State<ForumScreen> {
               children: [
                 _buildPostCard(
                   context,
-                  author: "Lâm Vũ",
-                  time: "2 giờ trước",
-                  title: "Làm thế nào để duy trì thói quen thiền định khi bận rộn?",
-                  preview: "Mình thấy rất khó để dành ra 15 phút mỗi sáng khi deadline dồn dập. Mọi người có mẹo nào không?",
-                  tag: "Mẹo học tập",
+                  author: "Alex",
+                  time: "2 hours ago",
+                  title: "How do you keep a meditation habit when busy?",
+                  preview: "I find it hard to spare 15 minutes each morning when deadlines pile up. Any tips?",
+                  tag: "Study tips",
                   replies: 24,
                   likes: 56,
                 ),
                 _buildPostCard(
                   context,
-                  author: "Minh Thu",
-                  time: "5 giờ trước",
-                  title: "Review khóa học 'Quản trị năng lượng đỉnh cao'",
-                  preview: "Sau 1 tuần áp dụng các kỹ thuật trong khóa học, mình cảm thấy tỉnh táo hơn hẳn vào buổi chiều...",
-                  tag: "Thảo luận",
+                  author: "Sam",
+                  time: "5 hours ago",
+                  title: "Review: Peak Energy Management course",
+                  preview: "After a week of applying the techniques, I feel much more alert in the afternoon...",
+                  tag: "Discussion",
                   replies: 12,
                   likes: 89,
                 ),
                 _buildPostCard(
                   context,
-                  author: "Hoàng Nam",
-                  time: "Hôm qua",
-                  title: "Xin tài liệu về lãnh đạo từ tâm bằng tiếng Anh",
-                  preview: "Chào mọi người, mình đang tìm một số đầu sách tiếng Anh để nghiên cứu thêm về chủ đề này.",
-                  tag: "Câu hỏi",
+                  author: "Jordan",
+                  time: "Yesterday",
+                  title: "Looking for English resources on heart-centered leadership",
+                  preview: "Hi everyone, I'm looking for some English books on this topic.",
+                  tag: "Question",
                   replies: 5,
                   likes: 12,
                 ),
@@ -243,7 +243,7 @@ class ForumThreadScreen extends StatelessWidget {
         backgroundColor: Colors.white,
         elevation: 0,
         iconTheme: const IconThemeData(color: AppColors.accentDark),
-        title: Text("THẢO LUẬN", style: GoogleFonts.fredoka(fontWeight: FontWeight.bold)),
+        title: Text("DISCUSSION", style: GoogleFonts.fredoka(fontWeight: FontWeight.bold)),
         centerTitle: true,
       ),
       body: Stack(
@@ -260,7 +260,7 @@ class ForumThreadScreen extends StatelessWidget {
                 _buildCourseReference(),
                 const SizedBox(height: 32),
                 Text(
-                  "BÌNH LUẬN (24)",
+                  "COMMENTS (24)",
                   style: GoogleFonts.fredoka(
                     fontSize: 14,
                     fontWeight: FontWeight.bold,
@@ -268,8 +268,8 @@ class ForumThreadScreen extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(height: 16),
-                _buildReplyItem("Hưng Đặng", "Rất đồng ý với bạn! Mình cũng đã duy trì được 1 tháng rồi.", "1 giờ trước"),
-                _buildReplyItem("Thùy Linh", "Cho mình hỏi bạn thường thiền lúc mấy giờ để hiệu quả nhất?", "30 phút trước"),
+                _buildReplyItem("Alex", "I agree! I've kept it up for a month now.", "1 hour ago"),
+                _buildReplyItem("Sam", "What time do you usually meditate for best results?", "30 min ago"),
                 const SizedBox(height: 100), // Spacing for input
               ],
             ),
@@ -293,8 +293,8 @@ class ForumThreadScreen extends StatelessWidget {
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text("Lâm Vũ", style: GoogleFonts.nunito(fontWeight: FontWeight.bold, fontSize: 15)),
-            Text("2 giờ trước • 1.2k lượt xem", style: GoogleFonts.nunito(color: Colors.grey, fontSize: 12)),
+            Text("Alex", style: GoogleFonts.nunito(fontWeight: FontWeight.bold, fontSize: 15)),
+            Text("2 hours ago • 1.2k views", style: GoogleFonts.nunito(color: Colors.grey, fontSize: 12)),
           ],
         ),
       ],
@@ -306,12 +306,12 @@ class ForumThreadScreen extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
-          "Lợi ích của việc thiền 10 phút mỗi sáng trước khi đi làm",
+          "Benefits of 10 minutes of morning meditation before work",
           style: GoogleFonts.nunito(fontSize: 22, fontWeight: FontWeight.w800, color: AppColors.accentDark),
         ),
         const SizedBox(height: 16),
         Text(
-          "Chào mọi người, tuần vừa qua mình đã thử áp dụng việc ngồi tĩnh tâm 10 phút trước khi bắt đầu check email hay làm việc. Kết quả thật bất ngờ, mình cảm thấy áp lực trong công việc giảm đi đáng kể. Tâm trí dường như sáng suốt hơn để đưa ra các quyết định quan trọng.",
+          "Hi everyone, last week I tried sitting for 10 minutes before checking email or starting work. The result was surprising – I felt less pressure and my mind was clearer for important decisions.",
           style: GoogleFonts.nunito(fontSize: 16, height: 1.6, color: AppColors.accentDark),
         ),
       ],
@@ -343,11 +343,11 @@ class ForumThreadScreen extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  "Khóa học liên quan",
+                  "Related course",
                   style: GoogleFonts.nunito(fontSize: 11, color: AppColors.textMuted),
                 ),
                 Text(
-                  "Thiền định & Lãnh đạo bản thân",
+                  "Meditation & Self leadership",
                   style: GoogleFonts.nunito(fontWeight: FontWeight.bold, fontSize: 14),
                 ),
               ],
@@ -386,11 +386,11 @@ class ForumThreadScreen extends StatelessWidget {
             children: [
               const Icon(LucideIcons.thumbsUp, size: 14, color: AppColors.primaryBlue),
               const SizedBox(width: 4),
-              Text("Đồng ý", style: GoogleFonts.nunito(color: AppColors.primaryBlue, fontSize: 12, fontWeight: FontWeight.bold)),
+              Text("Like", style: GoogleFonts.nunito(color: AppColors.primaryBlue, fontSize: 12, fontWeight: FontWeight.bold)),
               const SizedBox(width: 24),
               const Icon(LucideIcons.reply, size: 14, color: Colors.grey),
               const SizedBox(width: 4),
-              Text("Trả lời", style: GoogleFonts.nunito(color: Colors.grey, fontSize: 12)),
+              Text("Reply", style: GoogleFonts.nunito(color: Colors.grey, fontSize: 12)),
             ],
           ),
         ],
@@ -426,7 +426,7 @@ class ForumThreadScreen extends StatelessWidget {
                 ),
                 child: TextField(
                   decoration: InputDecoration(
-                    hintText: "Viết bình luận...",
+                    hintText: "Write a comment...",
                     hintStyle: GoogleFonts.nunito(fontSize: 14, color: Colors.grey),
                     border: InputBorder.none,
                   ),

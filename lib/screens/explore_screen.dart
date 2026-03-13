@@ -33,7 +33,7 @@ class ExploreScreen extends StatelessWidget {
                 ),
                 child: TextField(
                   decoration: InputDecoration(
-                    hintText: "Tìm kiếm khóa học...",
+                    hintText: "Search courses...",
                     hintStyle: GoogleFonts.nunito(color: Colors.grey),
                     border: InputBorder.none,
                     icon: const Icon(LucideIcons.search, color: Colors.grey),
@@ -47,15 +47,15 @@ class ExploreScreen extends StatelessWidget {
               padding: const EdgeInsets.symmetric(horizontal: 24),
               child: Row(
                 children: [
-                  _buildCategoryChip("Lãnh đạo", true),
-                  _buildCategoryChip("Tỉnh thức", false),
-                  _buildCategoryChip("Sự nghiệp", false),
-                  _buildCategoryChip("Sức khỏe", false),
+                  _buildCategoryChip("Leadership", true),
+                  _buildCategoryChip("Mindfulness", false),
+                  _buildCategoryChip("Career", false),
+                  _buildCategoryChip("Health", false),
                 ],
               ),
             ),
             const SizedBox(height: 32),
-            _buildSectionHeader("KHÓA HỌC PHỔ BIẾN"),
+            _buildSectionHeader("POPULAR COURSES"),
             const SizedBox(height: 16),
             ListView.builder(
               shrinkWrap: true,
@@ -65,10 +65,10 @@ class ExploreScreen extends StatelessWidget {
               itemBuilder: (context, index) {
                 return _buildCourseCard(
                   context,
-                  title: index == 0 ? "Zen Leader 2: Lãnh Đạo Từ Tâm" : "Quản Trị Năng Lượng Đỉnh Cao",
+                  title: index == 0 ? "Zen Leader 2: Lead from Within" : "Peak Energy Management",
                   rating: "4.9",
                   students: "1.2k",
-                  price: "22.000.000đ",
+                  price: "\$299",
                   color: index == 0 ? AppColors.primaryBlue : AppColors.teal,
                 );
               },
@@ -86,7 +86,7 @@ class ExploreScreen extends StatelessWidget {
         },
         backgroundColor: AppColors.primaryBlue,
         icon: const Icon(LucideIcons.rocket, color: Colors.white),
-        label: Text("THAM GIA HỘI THẢO", style: GoogleFonts.fredoka(fontWeight: FontWeight.bold, color: Colors.white)),
+        label: Text("JOIN SEMINARS", style: GoogleFonts.fredoka(fontWeight: FontWeight.bold, color: Colors.white)),
       ),
     );
   }
@@ -125,7 +125,7 @@ class ExploreScreen extends StatelessWidget {
             ),
           ),
           Text(
-            "Xem tất cả",
+            "View all",
             style: GoogleFonts.nunito(
               color: AppColors.primaryBlue,
               fontWeight: FontWeight.bold,

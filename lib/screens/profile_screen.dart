@@ -41,7 +41,7 @@ class ProfileScreen extends StatelessWidget {
                   elevation: 0,
                 ),
                 child: Text(
-                  "KHÓA HỌC CỦA TÔI",
+                  "MY COURSES",
                   style: GoogleFonts.fredoka(fontWeight: FontWeight.bold, color: Colors.white, fontSize: 16),
                 ),
               ),
@@ -85,7 +85,7 @@ class ProfileScreen extends StatelessWidget {
           ),
           const SizedBox(height: 16),
           Text(
-            "Nguyễn Tâm",
+            "Alex",
             style: GoogleFonts.nunito(fontSize: 24, fontWeight: FontWeight.bold, color: AppColors.accentDark),
           ),
           const SizedBox(height: 8),
@@ -102,7 +102,7 @@ class ProfileScreen extends StatelessWidget {
                 const Icon(LucideIcons.award, color: AppColors.primaryBlue, size: 16),
                 const SizedBox(width: 8),
                 Text(
-                  "Bậc Thầy Tỉnh Thức",
+                  "Master Level",
                   style: GoogleFonts.fredoka(color: AppColors.primaryBlue, fontSize: 13, fontWeight: FontWeight.bold),
                 ),
               ],
@@ -124,9 +124,9 @@ class ProfileScreen extends StatelessWidget {
         crossAxisSpacing: 16,
         childAspectRatio: 0.9,
         children: [
-          _buildStatCard(LucideIcons.flame, "12", "Ngày Streak", Colors.orange),
-          _buildStatCard(LucideIcons.zap, "1450", "Tổng Zen XP", Colors.amber),
-          _buildStatCard(LucideIcons.trello, "#4", "Hạng hiện tại", AppColors.primaryBlue),
+          _buildStatCard(LucideIcons.flame, "12", "Day Streak", Colors.orange),
+          _buildStatCard(LucideIcons.zap, "1450", "Total Zen XP", Colors.amber),
+          _buildStatCard(LucideIcons.trello, "#4", "Current rank", AppColors.primaryBlue),
         ],
       ),
     );
@@ -160,7 +160,7 @@ class ProfileScreen extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            "THÀNH TỰU",
+            "ACHIEVEMENTS",
             style: GoogleFonts.fredoka(fontSize: 14, fontWeight: FontWeight.bold, color: AppColors.textMuted),
           ),
           const SizedBox(height: 16),
@@ -176,9 +176,9 @@ class ProfileScreen extends StatelessWidget {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
-                _buildBadge(LucideIcons.wind, "Thiền Giả"),
-                _buildBadge(LucideIcons.sun, "Tỉnh Thức"),
-                _buildBadge(LucideIcons.shieldCheck, "Vững Chãi"),
+                _buildBadge(LucideIcons.wind, "Meditator"),
+                _buildBadge(LucideIcons.sun, "Mindful"),
+                _buildBadge(LucideIcons.shieldCheck, "Steadfast"),
               ],
             ),
           ),
@@ -214,7 +214,7 @@ class ProfileScreen extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            "CÀI ĐẶT",
+            "SETTINGS",
             style: GoogleFonts.fredoka(fontSize: 14, fontWeight: FontWeight.bold, color: AppColors.textMuted),
           ),
           const SizedBox(height: 16),
@@ -239,8 +239,8 @@ class ProfileScreen extends StatelessWidget {
                 ),
                 child: const Icon(LucideIcons.languages, color: AppColors.primaryBlue, size: 20),
               ),
-              title: Text("Ngôn ngữ", style: GoogleFonts.nunito(fontWeight: FontWeight.bold)),
-              subtitle: Text("Tiếng Việt", style: GoogleFonts.nunito(color: Colors.grey, fontSize: 12)),
+              title: Text("Language", style: GoogleFonts.nunito(fontWeight: FontWeight.bold)),
+              subtitle: Text("English", style: GoogleFonts.nunito(color: Colors.grey, fontSize: 12)),
               trailing: const Icon(LucideIcons.chevronRight, color: Colors.grey, size: 20),
             ),
           ),

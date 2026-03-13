@@ -11,9 +11,9 @@ class CreatePostScreen extends StatefulWidget {
 }
 
 class _CreatePostScreenState extends State<CreatePostScreen> {
-  String? _selectedCourse = "Thiền định & Lãnh đạo bản thân";
-  final List<String> _tags = ["Thảo luận", "Câu hỏi", "Mẹo học tập", "Sự nghiệp"];
-  final Set<String> _selectedTags = {"Thảo luận"};
+  String? _selectedCourse = "Meditation & Self leadership";
+  final List<String> _tags = ["Discussion", "Question", "Study tips", "Career"];
+  final Set<String> _selectedTags = {"Discussion"};
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +24,7 @@ class _CreatePostScreenState extends State<CreatePostScreen> {
         elevation: 0,
         leading: TextButton(
           onPressed: () => Navigator.pop(context),
-          child: Text("Hủy", style: GoogleFonts.nunito(color: Colors.grey, fontWeight: FontWeight.bold)),
+          child: Text("Cancel", style: GoogleFonts.nunito(color: Colors.grey, fontWeight: FontWeight.bold)),
         ),
         leadingWidth: 70,
         actions: [
@@ -37,7 +37,7 @@ class _CreatePostScreenState extends State<CreatePostScreen> {
                 shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
                 elevation: 0,
               ),
-              child: Text("Đăng bài", style: GoogleFonts.fredoka(fontWeight: FontWeight.bold, color: Colors.white)),
+              child: Text("Post", style: GoogleFonts.fredoka(fontWeight: FontWeight.bold, color: Colors.white)),
             ),
           ),
         ],
@@ -50,7 +50,7 @@ class _CreatePostScreenState extends State<CreatePostScreen> {
             TextField(
               style: GoogleFonts.nunito(fontSize: 24, fontWeight: FontWeight.bold),
               decoration: InputDecoration(
-                hintText: "Tiêu đề bài viết",
+                hintText: "Post title",
                 hintStyle: GoogleFonts.nunito(color: Colors.grey.shade400, fontWeight: FontWeight.bold),
                 border: InputBorder.none,
               ),
@@ -65,7 +65,7 @@ class _CreatePostScreenState extends State<CreatePostScreen> {
               maxLines: 15,
               style: GoogleFonts.nunito(fontSize: 16, height: 1.6),
               decoration: InputDecoration(
-                hintText: "Bạn đang nghĩ gì? Chia sẻ ngay với cộng đồng Zen nhé...",
+                hintText: "What's on your mind? Share with the Zen community...",
                 hintStyle: GoogleFonts.nunito(color: Colors.grey),
                 border: InputBorder.none,
               ),
@@ -97,13 +97,13 @@ class _CreatePostScreenState extends State<CreatePostScreen> {
           const Icon(LucideIcons.bookOpen, color: AppColors.primaryBlue, size: 20),
           const SizedBox(width: 12),
           Text(
-            "Khóa học liên quan:",
+            "Related course:",
             style: GoogleFonts.nunito(color: AppColors.textMuted, fontSize: 13),
           ),
           const SizedBox(width: 8),
           Expanded(
             child: Text(
-              _selectedCourse ?? "Không chọn",
+              _selectedCourse ?? "Not selected",
               style: GoogleFonts.nunito(fontWeight: FontWeight.bold, color: AppColors.primaryBlue, fontSize: 13),
               overflow: TextOverflow.ellipsis,
             ),
@@ -118,7 +118,7 @@ class _CreatePostScreenState extends State<CreatePostScreen> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text("Thêm thẻ:", style: GoogleFonts.nunito(color: AppColors.textMuted, fontSize: 13)),
+        Text("Add tags:", style: GoogleFonts.nunito(color: AppColors.textMuted, fontSize: 13)),
         const SizedBox(height: 12),
         Wrap(
           spacing: 8,

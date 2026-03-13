@@ -12,7 +12,7 @@ class JoinSeminarScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: AppColors.background,
       appBar: AppBar(
-        title: Text("THAM GIA HỘI THẢO", style: GoogleFonts.fredoka(fontWeight: FontWeight.bold)),
+        title: Text("JOIN SEMINARS", style: GoogleFonts.fredoka(fontWeight: FontWeight.bold)),
         centerTitle: true,
         backgroundColor: Colors.white,
         elevation: 0,
@@ -26,29 +26,29 @@ class JoinSeminarScreen extends StatelessWidget {
               children: [
                 _buildSeminarCard(
                   context,
-                  title: "Khai phóng tiềm năng lãnh đạo",
-                  instructor: "Thầy Minh Niệm",
+                  title: "Unlock your leadership potential",
+                  instructor: "Instructor",
                   participants: "450+",
                   status: "LIVE",
-                  category: "Lãnh đạo",
+                  category: "Leadership",
                   color: AppColors.primaryBlue,
                 ),
                 _buildSeminarCard(
                   context,
-                  title: "Thấu hiểu nội tâm - Quản trị cuộc đời",
-                  instructor: "Trương Nguyện Thành",
+                  title: "Inner understanding – Life management",
+                  instructor: "Guest",
                   participants: "230",
                   status: "Upcoming",
-                  category: "Tâm lý",
+                  category: "Psychology",
                   color: AppColors.teal,
                 ),
                 _buildSeminarCard(
                   context,
-                  title: "Xây dựng đội ngũ kế thừa",
-                  instructor: "Coach Duy Khanh",
+                  title: "Build a succession team",
+                  instructor: "Coach",
                   participants: "120",
                   status: "Upcoming",
-                  category: "Quản trị",
+                  category: "Management",
                   color: Colors.orange,
                 ),
               ],
@@ -75,7 +75,7 @@ class JoinSeminarScreen extends StatelessWidget {
               ),
               child: TextField(
                 decoration: InputDecoration(
-                  hintText: "Tìm chủ đề hoặc diễn giả...",
+                  hintText: "Search topic or instructor...",
                   hintStyle: GoogleFonts.nunito(color: Colors.grey),
                   border: InputBorder.none,
                   icon: const Icon(LucideIcons.search, color: Colors.grey, size: 20),
@@ -89,10 +89,10 @@ class JoinSeminarScreen extends StatelessWidget {
             padding: const EdgeInsets.symmetric(horizontal: 24),
             child: Row(
               children: [
-                _buildFilterChip("Tất cả", true),
-                _buildFilterChip("Hôm nay", false),
-                _buildFilterChip("Miễn phí", false),
-                _buildFilterChip("Phổ biến", false),
+                _buildFilterChip("All", true),
+                _buildFilterChip("Today", false),
+                _buildFilterChip("Free", false),
+                _buildFilterChip("Popular", false),
               ],
             ),
           ),
@@ -181,7 +181,7 @@ class JoinSeminarScreen extends StatelessWidget {
                       borderRadius: BorderRadius.circular(8),
                     ),
                     child: Text(
-                      isLive ? "TRỰC TIẾP" : "Sắp diễn ra",
+                      isLive ? "LIVE" : "Upcoming",
                       style: GoogleFonts.fredoka(
                         color: Colors.white,
                         fontSize: 10,
@@ -265,7 +265,7 @@ class JoinSeminarScreen extends StatelessWidget {
                           padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
                         ),
                         child: Text(
-                          isLive ? "Tham gia" : "Đăng ký",
+                          isLive ? "Join" : "Register",
                           style: GoogleFonts.fredoka(fontWeight: FontWeight.bold, fontSize: 13),
                         ),
                       ),

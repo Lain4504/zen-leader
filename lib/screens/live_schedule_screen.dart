@@ -12,7 +12,7 @@ class LiveScheduleScreen extends StatefulWidget {
 
 class _LiveScheduleScreenState extends State<LiveScheduleScreen> {
   int _selectedDayIndex = 0;
-  final List<String> _days = ["T2", "T3", "T4", "T5", "T6", "T7", "CN"];
+  final List<String> _days = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
   final List<String> _dates = ["12", "13", "14", "15", "16", "17", "18"];
 
   @override
@@ -20,7 +20,7 @@ class _LiveScheduleScreenState extends State<LiveScheduleScreen> {
     return Scaffold(
       backgroundColor: AppColors.background,
       appBar: AppBar(
-        title: Text("LỊCH TRỰC TIẾP", style: GoogleFonts.fredoka(fontWeight: FontWeight.bold)),
+        title: Text("LIVE SCHEDULE", style: GoogleFonts.fredoka(fontWeight: FontWeight.bold)),
         centerTitle: true,
         backgroundColor: Colors.white,
         elevation: 0,
@@ -35,29 +35,29 @@ class _LiveScheduleScreenState extends State<LiveScheduleScreen> {
               padding: const EdgeInsets.all(24),
               children: [
                 _buildSessionCard(
-                  title: "Thiền định & Lãnh đạo bản thân",
-                  instructor: "Thầy Minh Niệm",
+                  title: "Meditation & Self leadership",
+                  instructor: "Instructor",
                   course: "Zen Leader 1",
                   time: "20:30 PM",
-                  duration: "60 phút",
+                  duration: "60 min",
                   participants: "128",
                   status: "LIVE",
                 ),
                 _buildSessionCard(
-                  title: "Quản trị cảm xúc trong đàm phán",
-                  instructor: "Trương Nguyện Thành",
-                  course: "Lãnh đạo từ tâm",
+                  title: "Emotional management in negotiation",
+                  instructor: "Guest",
+                  course: "Lead from within",
                   time: "14:00 PM",
-                  duration: "90 phút",
+                  duration: "90 min",
                   participants: "45",
                   status: "Upcoming",
                 ),
                 _buildSessionCard(
-                  title: "Năng lượng tĩnh cho Leader",
-                  instructor: "Coach Duy Khanh",
+                  title: "Calm energy for leaders",
+                  instructor: "Coach",
                   course: "Workshop",
-                  time: "Hôm qua",
-                  duration: "120 phút",
+                  time: "Yesterday",
+                  duration: "120 min",
                   participants: "300",
                   status: "Completed",
                 ),
@@ -127,9 +127,9 @@ class _LiveScheduleScreenState extends State<LiveScheduleScreen> {
       padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 8),
       child: Row(
         children: [
-          _buildOptionChip("Hôm nay", true),
+          _buildOptionChip("Today", true),
           const SizedBox(width: 8),
-          _buildOptionChip("Tuần này", false),
+          _buildOptionChip("This week", false),
           const Spacer(),
           const Icon(LucideIcons.calendar, size: 20, color: AppColors.primaryBlue),
         ],
@@ -285,16 +285,16 @@ class _LiveScheduleScreenState extends State<LiveScheduleScreen> {
   }
 
   Widget _buildActionButton(String status) {
-    String label = "Tham gia ngay";
+    String label = "Join now";
     IconData icon = LucideIcons.video;
     bool isOutline = false;
 
     if (status == "Upcoming") {
-      label = "Nhắc tôi";
+      label = "Remind me";
       icon = LucideIcons.bell;
       isOutline = true;
     } else if (status == "Completed") {
-      label = "Xem lại bản ghi";
+      label = "Watch recording";
       icon = LucideIcons.playCircle;
       isOutline = true;
     }
@@ -335,7 +335,7 @@ class _LiveScheduleScreenState extends State<LiveScheduleScreen> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                "CÀI ĐẶT NHẮC NHỞ",
+                "REMINDER SETTINGS",
                 style: GoogleFonts.fredoka(
                   fontSize: 18,
                   fontWeight: FontWeight.bold,
@@ -343,9 +343,9 @@ class _LiveScheduleScreenState extends State<LiveScheduleScreen> {
                 ),
               ),
               const SizedBox(height: 24),
-              _buildReminderToggle("10 phút trước khi bắt đầu", true),
+              _buildReminderToggle("10 minutes before start", true),
               const SizedBox(height: 16),
-              _buildReminderToggle("1 giờ trước khi bắt đầu", false),
+              _buildReminderToggle("1 hour before start", false),
               const SizedBox(height: 32),
               SizedBox(
                 width: double.infinity,
@@ -356,7 +356,7 @@ class _LiveScheduleScreenState extends State<LiveScheduleScreen> {
                     padding: const EdgeInsets.symmetric(vertical: 16),
                     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
                   ),
-                  child: Text("HÒAN TẤT", style: GoogleFonts.fredoka(color: Colors.white, fontWeight: FontWeight.bold)),
+                  child: Text("DONE", style: GoogleFonts.fredoka(color: Colors.white, fontWeight: FontWeight.bold)),
                 ),
               ),
             ],

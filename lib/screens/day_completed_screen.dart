@@ -26,7 +26,7 @@ class DayCompletedScreen extends StatelessWidget {
                   _buildTrophyIcon(),
                   const SizedBox(height: 40),
                   Text(
-                    "Tuyệt vời, Nguyễn Tâm!",
+                    "Great job!",
                     textAlign: TextAlign.center,
                     style: GoogleFonts.fredoka(
                       fontSize: 28,
@@ -36,7 +36,7 @@ class DayCompletedScreen extends StatelessWidget {
                   ).animate().fadeIn(duration: 600.ms).slideY(begin: 0.2, end: 0),
                   const SizedBox(height: 12),
                   Text(
-                    "Chúc mừng bạn đã hoàn thành Ngày 5",
+                    "Congratulations on completing Day 5",
                     textAlign: TextAlign.center,
                     style: GoogleFonts.nunito(
                       fontSize: 16,
@@ -48,7 +48,7 @@ class DayCompletedScreen extends StatelessWidget {
                   _buildRewardsSection(),
                   const SizedBox(height: 48),
                   Text(
-                    "“Sự tĩnh tại là sức mạnh của bạn”",
+                    "\"Your calm is your strength\"",
                     textAlign: TextAlign.center,
                     style: GoogleFonts.nunito(
                       fontSize: 18,
@@ -146,7 +146,7 @@ class DayCompletedScreen extends StatelessWidget {
         elevation: 0,
       ),
       child: Text(
-        "TIẾP TỤC LỘ TRÌNH",
+        "CONTINUE JOURNEY",
         style: GoogleFonts.fredoka(
           fontWeight: FontWeight.bold,
           color: Colors.white,
