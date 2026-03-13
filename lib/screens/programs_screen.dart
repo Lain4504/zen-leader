@@ -39,8 +39,10 @@ class ProgramsScreen extends StatelessWidget {
             _buildProgramCard(
               context,
               title: "Zen Leader Program",
-              description: "Transform your leadership from the inside out",
-              imageUrl: "https://images.unsplash.com/photo-1506126613408-eca07ce68773?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+              description:
+                  "Discover how Zen flips leadership. You sense more is possible than conventional life or leadership and you're committed to living a more integrated, purposeful life and creating a more loving, regenerative world. In this online program, you'll learn how to flip around challenges and limitations and break through to greater thriving, influence, and ability to realize your goals.",
+              imageUrl:
+                  "https://images.squarespace-cdn.com/content/v1/66b622f49a9c4b791061dd7f/2dbfb0dc-be08-4c98-ba00-0d47129ccc57/reflect-web-square.jpg?format=2500w",
               progress: 0.4,
               level: "Level 5/20",
               accentColor: AppColors.primaryBlue,
@@ -55,8 +57,10 @@ class ProgramsScreen extends StatelessWidget {
             _buildProgramCard(
               context,
               title: "HEAL Program",
-              description: "Healthy Embodied Agile Leadership for healthcare",
-              imageUrl: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+              description:
+                  "Entry for healthcare professionals. You sense more is possible than the way healthcare is currently practiced and you're committed to bringing greater thriving and healing to yourself, patients, systems and community. Either online or in-person, you'll experience the reframing flips of Zen leadership, be able to focus on challenges and applications unique to healthcare and earn CME.",
+              imageUrl:
+                  "https://images.squarespace-cdn.com/content/v1/66b622f49a9c4b791061dd7f/ad25f1bf-4c88-4aad-9abe-07e29d76ab5f/Morning+Circle.JPG?format=2500w",
               progress: 0.1,
               level: "Level 2/15",
               accentColor: AppColors.teal,
@@ -64,9 +68,11 @@ class ProgramsScreen extends StatelessWidget {
             const SizedBox(height: 24),
             _buildProgramCard(
               context,
-              title: "FEBI-4U",
-              description: "Discover your energy patterns and personality",
-              imageUrl: "https://images.unsplash.com/photo-1518199266791-5375a83190b7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+              title: "FEBI-4U Program",
+              description:
+                  "Explore mind-body patterns. You sense more health, joy, and effectiveness is possible with deeper mind-body integration, or you'd like to help others explore these mind-body patterns as a certified coach or facilitator. In this online program, you'll discover not only the go-to patterns of your personality, but how to access any pattern and when it is your indispensable ally.",
+              imageUrl:
+                  "https://images.squarespace-cdn.com/content/v1/66b622f49a9c4b791061dd7f/1724353537007-3T5HN25TRRXHBG8YBVZC/febi-4arrow-hor.jpg?format=2500w",
               progress: 0.05,
               level: "Level 1/10",
               accentColor: Colors.orange,
@@ -208,7 +214,7 @@ class ProgramsScreen extends StatelessWidget {
                       ),
                     ),
                     child: Text(
-                      "BẮT ĐẦU CHƯƠNG TRÌNH",
+                      "START PROGRAM",
                       style: GoogleFonts.fredoka(
                         fontWeight: FontWeight.bold,
                         fontSize: 14,

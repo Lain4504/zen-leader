@@ -41,7 +41,7 @@ class CourseDetailScreen extends StatelessWidget {
 
   Widget _buildSliverAppBar(BuildContext context) {
     return SliverAppBar(
-      expandedHeight: 250,
+      expandedHeight: 260,
       pinned: true,
       backgroundColor: AppColors.primaryBlue,
       leading: IconButton(
@@ -53,7 +53,7 @@ class CourseDetailScreen extends StatelessWidget {
           fit: StackFit.expand,
           children: [
             Image.network(
-              "https://images.unsplash.com/photo-1499209974431-9dac3adaf471?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+              "https://images.squarespace-cdn.com/content/v1/66b622f49a9c4b791061dd7f/2dbfb0dc-be08-4c98-ba00-0d47129ccc57/reflect-web-square.jpg?format=1500w",
               fit: BoxFit.cover,
             ),
             Container(
@@ -89,29 +89,25 @@ class CourseDetailScreen extends StatelessWidget {
               borderRadius: BorderRadius.circular(8),
             ),
             child: Text(
-              "BEST SELLER",
+              "ZL1 / HEAL1 • COURSE DASHBOARD",
               style: GoogleFonts.fredoka(color: AppColors.primaryBlue, fontSize: 10, fontWeight: FontWeight.bold),
             ),
           ),
           const SizedBox(height: 12),
           Text(
-            "Leading with empathy",
-            style: GoogleFonts.fredoka(fontSize: 24, fontWeight: FontWeight.bold, color: AppColors.accentDark),
+            "Leading with Energy and Connection",
+            style: GoogleFonts.fredoka(fontSize: 22, fontWeight: FontWeight.bold, color: AppColors.accentDark),
           ),
           const SizedBox(height: 16),
           Row(
             children: [
               const CircleAvatar(radius: 12, backgroundColor: Colors.grey, child: Icon(Icons.person, size: 14, color: Colors.white)),
               const SizedBox(width: 8),
-              Text("Instructor", style: GoogleFonts.nunito(fontWeight: FontWeight.bold, fontSize: 14)),
+              Text("with Ginny Whitelaw & Team", style: GoogleFonts.nunito(fontWeight: FontWeight.bold, fontSize: 14)),
               const Spacer(),
-              const Icon(Icons.star, color: Colors.amber, size: 18),
+              Icon(Icons.event_available, color: Colors.green.shade600, size: 18),
               const SizedBox(width: 4),
-              Text("4.9", style: GoogleFonts.nunito(fontWeight: FontWeight.bold)),
-              const SizedBox(width: 12),
-              const Icon(Icons.people_alt_outlined, color: Colors.grey, size: 18),
-              const SizedBox(width: 4),
-              Text("1.5k Students", style: GoogleFonts.nunito(color: Colors.grey, fontSize: 13)),
+              Text("Sept 25–28", style: GoogleFonts.nunito(fontWeight: FontWeight.bold)),
             ],
           ),
         ],
@@ -130,24 +126,45 @@ class CourseDetailScreen extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          _buildSectionTitle("Course overview"),
+          _buildSectionTitle("Welcome to ZL1 / HEAL1"),
           const SizedBox(height: 12),
           Text(
-            "This course helps you master your mind, develop emotional intelligence and build heart-centered leadership. Learn deep listening and empathy with your team to build lasting trust.",
+            "Below you'll find everything you need for the program—from prework to your completion certificate. Click on each section to see the tasks and resources inside.",
             style: GoogleFonts.nunito(color: Colors.grey, height: 1.6, fontSize: 14),
           ),
-          const SizedBox(height: 20),
-          _buildSectionTitle("Skills you'll gain"),
-          const SizedBox(height: 12),
-          Wrap(
-            spacing: 8,
-            runSpacing: 8,
-            children: [
-              _buildSkillChip("Deep listening"),
-              _buildSkillChip("Emotional management"),
-              _buildSkillChip("Empathy"),
-              _buildSkillChip("Mindfulness"),
-            ],
+          const SizedBox(height: 16),
+          Container(
+            padding: const EdgeInsets.all(16),
+            decoration: BoxDecoration(
+              color: AppColors.background,
+              borderRadius: BorderRadius.circular(20),
+            ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  "Zen Leadership begins with a flip from coping to transforming, from not seeing to seeing, from cognitive to embodied, from local self to whole Self, culminating in leadership that is wise, resonant and fully resourced.",
+                  style: GoogleFonts.nunito(
+                    color: Colors.grey.shade800,
+                    height: 1.6,
+                    fontSize: 13,
+                    fontStyle: FontStyle.italic,
+                  ),
+                ),
+                const SizedBox(height: 10),
+                Align(
+                  alignment: Alignment.centerRight,
+                  child: Text(
+                    "— Ginny Whitelaw Roshi",
+                    style: GoogleFonts.nunito(
+                      color: Colors.grey.shade700,
+                      fontSize: 12,
+                      fontWeight: FontWeight.w600,
+                    ),
+                  ),
+                ),
+              ],
+            ),
           ),
         ],
       ),
@@ -165,18 +182,53 @@ class CourseDetailScreen extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          _buildSectionTitle("Curriculum"),
+          _buildSectionTitle("Section outline"),
           const SizedBox(height: 16),
-          _buildCurriculumItem("1. Video: Introduction to empathy", "15 min", Icons.play_circle_outline),
-          _buildCurriculumItem("2. Quiz: Recognizing emotions", "5 min", Icons.help_outline),
-          _buildCurriculumItem("3. Practice: Meditation exercises", "10 min", Icons.edit_outlined),
-          _buildCurriculumItem("4. Assignment: Empathy practice", "20 min", Icons.description_outlined),
+          _buildCurriculumItem(
+            title: "Getting ready for ZL1 / HEAL1",
+            subtitle: "Prework: profile, FEBI, leadership challenge, space, opening reflection",
+            icon: Icons.flag_circle_outlined,
+          ),
+          _buildCurriculumItem(
+            title: "Check these off before we begin",
+            subtitle: "Workbook, agenda, class roster, tech & space check",
+            icon: Icons.checklist_outlined,
+          ),
+          _buildCurriculumItem(
+            title: "ZL1 - Day 1",
+            subtitle: "Live session, recording & additional resources",
+            icon: Icons.calendar_view_day,
+          ),
+          _buildCurriculumItem(
+            title: "ZL1 - Day 2",
+            subtitle: "Live session, recording & shared resources",
+            icon: Icons.calendar_view_day,
+          ),
+          _buildCurriculumItem(
+            title: "ZL1 - Day 3",
+            subtitle: "Live session, recording & shared resources",
+            icon: Icons.calendar_view_day,
+          ),
+          _buildCurriculumItem(
+            title: "ZL1 - Day 4",
+            subtitle: "Live session, recording & shared resources",
+            icon: Icons.calendar_view_day,
+          ),
+          _buildCurriculumItem(
+            title: "Post-program follow-up",
+            subtitle: "Closing reflection, group photo, next steps & discussion forum",
+            icon: Icons.auto_awesome,
+          ),
         ],
       ),
     );
   }
 
-  Widget _buildCurriculumItem(String title, String duration, IconData icon) {
+  Widget _buildCurriculumItem({
+    required String title,
+    required String subtitle,
+    required IconData icon,
+  }) {
     return Padding(
       padding: const EdgeInsets.only(bottom: 20),
       child: Row(
@@ -192,7 +244,8 @@ class CourseDetailScreen extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(title, style: GoogleFonts.nunito(fontWeight: FontWeight.bold, fontSize: 14)),
-                Text(duration, style: GoogleFonts.nunito(color: Colors.grey, fontSize: 12)),
+                const SizedBox(height: 4),
+                Text(subtitle, style: GoogleFonts.nunito(color: Colors.grey, fontSize: 12, height: 1.4)),
               ],
             ),
           ),
@@ -216,13 +269,16 @@ class CourseDetailScreen extends StatelessWidget {
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text("COMPLETION REWARD", style: GoogleFonts.fredoka(color: AppColors.primaryBlue, fontSize: 10, fontWeight: FontWeight.bold)),
+              Text("Completion & certificates", style: GoogleFonts.fredoka(color: AppColors.primaryBlue, fontSize: 12, fontWeight: FontWeight.bold)),
               const SizedBox(height: 8),
               Row(
                 children: [
-                  const Icon(Icons.bolt, color: Colors.amber, size: 24),
+                  const Icon(Icons.workspace_premium, color: Colors.amber, size: 24),
                   const SizedBox(width: 8),
-                  Text("+500 XP", style: GoogleFonts.fredoka(fontSize: 18, fontWeight: FontWeight.bold, color: AppColors.accentDark)),
+                  Text(
+                    "Get your ZL / HEAL certificate\nwhen you complete the program",
+                    style: GoogleFonts.nunito(fontSize: 13, fontWeight: FontWeight.w600, color: AppColors.accentDark, height: 1.4),
+                  ),
                 ],
               ),
             ],
@@ -279,7 +335,7 @@ class CourseDetailScreen extends StatelessWidget {
           elevation: 0,
         ),
         child: Text(
-          "START LEARNING NOW",
+          "GO TO COURSE OUTLINE",
           style: GoogleFonts.fredoka(fontWeight: FontWeight.bold, color: Colors.white, fontSize: 16),
         ),
       ),

@@ -3,14 +3,11 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:zen_leader/theme/app_colors.dart';
 import 'package:zen_leader/screens/home_screen.dart';
 import 'package:zen_leader/screens/profile_screen.dart';
-import 'package:zen_leader/screens/explore_screen.dart';
-import 'package:zen_leader/screens/leaderboard_screen.dart';
-import 'package:zen_leader/screens/forum_screen.dart';
+import 'package:zen_leader/screens/community_resources_screen.dart';
+import 'package:zen_leader/screens/live_schedule_screen.dart';
 import 'package:zen_leader/screens/onboarding_screen.dart';
 import 'package:zen_leader/screens/programs_screen.dart';
-import 'package:zen_leader/screens/practice_screen.dart';
 import 'package:zen_leader/screens/insights_screen.dart';
-import 'package:zen_leader/screens/article_detail_screen.dart';
 
 void main() {
   runApp(const ZenLeaderApp());
@@ -50,7 +47,8 @@ class _MainNavigationState extends State<MainNavigation> {
   static const List<Widget> _screens = [
     HomeScreen(),
     ProgramsScreen(),
-    PracticeScreen(),
+    LiveScheduleScreen(),
+    CommunityResourcesScreen(),
     InsightsScreen(),
     ProfileScreen(),
   ];
@@ -82,7 +80,8 @@ class _MainNavigationState extends State<MainNavigation> {
           items: const [
             BottomNavigationBarItem(icon: Icon(Icons.home_outlined), label: 'Home'),
             BottomNavigationBarItem(icon: Icon(Icons.grid_view_outlined), label: 'Programs'),
-            BottomNavigationBarItem(icon: Icon(Icons.track_changes), label: 'Practice'),
+            BottomNavigationBarItem(icon: Icon(Icons.event_available_outlined), label: 'Live'),
+            BottomNavigationBarItem(icon: Icon(Icons.library_books_outlined), label: 'Resources'),
             BottomNavigationBarItem(icon: Icon(Icons.menu_book_outlined), label: 'Insights'),
             BottomNavigationBarItem(icon: Icon(Icons.person_outline), label: 'Profile'),
           ],

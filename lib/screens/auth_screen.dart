@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:zen_leader/theme/app_colors.dart';
 import 'package:zen_leader/main.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class AuthScreen extends StatefulWidget {
   const AuthScreen({super.key});
@@ -42,7 +43,7 @@ class _AuthScreenState extends State<AuthScreen> with SingleTickerProviderStateM
                 child: TextButton(
                   onPressed: _goToHome,
                   child: Text(
-                    "Skip to Home",
+                    "DEBUG: Skip to Home",
                     style: GoogleFonts.nunito(
                       color: AppColors.primaryBlue,
                       fontWeight: FontWeight.bold,
@@ -161,11 +162,11 @@ class _AuthScreenState extends State<AuthScreen> with SingleTickerProviderStateM
   Widget _buildSignUpForm() {
     return Column(
       children: [
-        _buildInputField("Full name", Icons.person_outline),
-        const SizedBox(height: 16),
         _buildInputField("Email", Icons.email_outlined),
         const SizedBox(height: 16),
-        _buildInputField("New password", Icons.lock_outline, isPassword: true),
+        _buildInputField("Password", Icons.lock_outline, isPassword: true),
+        const SizedBox(height: 16),
+        _buildInputField("Confirm password", Icons.lock_outline, isPassword: true),
         const SizedBox(height: 32),
         _buildPrimaryButton("CREATE ACCOUNT"),
       ],
@@ -237,16 +238,16 @@ class _AuthScreenState extends State<AuthScreen> with SingleTickerProviderStateM
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            _buildSocialIcon(Icons.public, Colors.redAccent),
+            _buildSocialIcon(const FaIcon(FontAwesomeIcons.google, color: Colors.redAccent, size: 24)),
             const SizedBox(width: 32),
-            _buildSocialIcon(Icons.apple, Colors.black),
+            _buildSocialIcon(const FaIcon(FontAwesomeIcons.apple, color: Colors.black, size: 26)),
           ],
         ),
       ],
     );
   }
 
-  Widget _buildSocialIcon(IconData icon, Color color) {
+  Widget _buildSocialIcon(Widget icon) {
     return Container(
       width: 64,
       height: 64,
@@ -262,7 +263,7 @@ class _AuthScreenState extends State<AuthScreen> with SingleTickerProviderStateM
         onTap: () {},
         borderRadius: BorderRadius.circular(16),
         child: Center(
-          child: Icon(icon, color: color, size: 28),
+          child: icon,
         ),
       ),
     );

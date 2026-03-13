@@ -4,7 +4,7 @@ import 'package:flutter_animate/flutter_animate.dart';
 import 'package:percent_indicator/linear_percent_indicator.dart';
 import 'package:zen_leader/theme/app_colors.dart';
 import 'package:zen_leader/screens/article_detail_screen.dart';
-import 'package:zen_leader/screens/lesson_screen.dart';
+import 'package:zen_leader/screens/learning_day_detail_screen.dart';
 import 'package:zen_leader/screens/zen_leader_pathway_screen.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -273,7 +273,10 @@ class HomeScreen extends StatelessWidget {
             width: double.infinity,
             child: ElevatedButton(
               onPressed: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context) => const LessonScreen()));
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const LearningDayDetailScreen()),
+                );
               },
               style: ElevatedButton.styleFrom(
                 backgroundColor: color.withOpacity(0.1),
