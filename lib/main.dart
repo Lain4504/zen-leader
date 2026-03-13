@@ -8,6 +8,10 @@ import 'package:zen_leader/screens/explore_screen.dart';
 import 'package:zen_leader/screens/leaderboard_screen.dart';
 import 'package:zen_leader/screens/forum_screen.dart';
 import 'package:zen_leader/screens/onboarding_screen.dart';
+import 'package:zen_leader/screens/programs_screen.dart';
+import 'package:zen_leader/screens/practice_screen.dart';
+import 'package:zen_leader/screens/insights_screen.dart';
+import 'package:zen_leader/screens/article_detail_screen.dart';
 
 void main() {
   runApp(const ZenLeaderApp());
@@ -46,9 +50,9 @@ class _MainNavigationState extends State<MainNavigation> {
 
   static const List<Widget> _screens = [
     HomeScreen(),
-    ExploreScreen(),
-    ForumScreen(),
-    LeaderboardScreen(),
+    ProgramsScreen(),
+    PracticeScreen(),
+    InsightsScreen(),
     ProfileScreen(),
   ];
 
@@ -77,10 +81,10 @@ class _MainNavigationState extends State<MainNavigation> {
           selectedLabelStyle: GoogleFonts.fredoka(fontWeight: FontWeight.bold, fontSize: 10),
           unselectedLabelStyle: GoogleFonts.nunito(fontSize: 10),
           items: const [
-            BottomNavigationBarItem(icon: Icon(LucideIcons.home), label: 'Learn'),
-            BottomNavigationBarItem(icon: Icon(LucideIcons.search), label: 'Explore'),
-            BottomNavigationBarItem(icon: Icon(LucideIcons.users), label: 'Community'),
-            BottomNavigationBarItem(icon: Icon(LucideIcons.trophy), label: 'Leaderboard'),
+            BottomNavigationBarItem(icon: Icon(LucideIcons.home), label: 'Home'),
+            BottomNavigationBarItem(icon: Icon(LucideIcons.layout), label: 'Programs'),
+            BottomNavigationBarItem(icon: Icon(LucideIcons.target), label: 'Practice'),
+            BottomNavigationBarItem(icon: Icon(LucideIcons.bookOpen), label: 'Insights'),
             BottomNavigationBarItem(icon: Icon(LucideIcons.user), label: 'Profile'),
           ],
         ),
