@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:lucide_icons/lucide_icons.dart';
 import 'package:zen_leader/theme/app_colors.dart';
+import 'package:zen_leader/screens/auth_screen.dart';
 
 class LanguageSelectionScreen extends StatefulWidget {
   const LanguageSelectionScreen({super.key});
@@ -30,7 +30,7 @@ class _LanguageSelectionScreenState extends State<LanguageSelectionScreen> {
         backgroundColor: Colors.transparent,
         elevation: 0,
         leading: IconButton(
-          icon: const Icon(LucideIcons.chevronLeft, color: AppColors.accentDark),
+          icon: const Icon(Icons.arrow_back_ios_new, color: AppColors.accentDark),
           onPressed: () => Navigator.pop(context),
         ),
       ),
@@ -77,7 +77,7 @@ class _LanguageSelectionScreenState extends State<LanguageSelectionScreen> {
                       hintText: "Search language...",
                       hintStyle: GoogleFonts.nunito(color: Colors.grey),
                       border: InputBorder.none,
-                      icon: const Icon(LucideIcons.search, color: Colors.grey, size: 20),
+                      icon: const Icon(Icons.search, color: Colors.grey, size: 20),
                     ),
                   ),
                 ),
@@ -152,7 +152,7 @@ class _LanguageSelectionScreenState extends State<LanguageSelectionScreen> {
             ),
             const Spacer(),
             if (isSelected)
-              const Icon(LucideIcons.checkCircle, color: AppColors.primaryBlue, size: 24),
+              const Icon(Icons.check_circle, color: AppColors.primaryBlue, size: 24),
           ],
         ),
       ),
@@ -173,7 +173,7 @@ class _LanguageSelectionScreenState extends State<LanguageSelectionScreen> {
         ],
       ),
       child: ElevatedButton(
-        onPressed: () => Navigator.pop(context),
+        onPressed: () => Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => const AuthScreen())),
         style: ElevatedButton.styleFrom(
           backgroundColor: AppColors.primaryBlue,
           minimumSize: const Size(double.infinity, 60),

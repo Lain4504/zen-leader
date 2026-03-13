@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:lucide_icons/lucide_icons.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:zen_leader/theme/app_colors.dart';
 
@@ -49,7 +48,7 @@ class ArticleDetailScreen extends StatelessWidget {
                           CircleAvatar(
                             radius: 16,
                             backgroundColor: AppColors.primaryBlue.withOpacity(0.1),
-                            child: const Icon(LucideIcons.user, size: 16, color: AppColors.primaryBlue),
+                            child: const Icon(Icons.person, size: 16, color: AppColors.primaryBlue),
                           ),
                           const SizedBox(width: 12),
                           Text(
@@ -89,12 +88,12 @@ class ArticleDetailScreen extends StatelessWidget {
       elevation: 0,
       backgroundColor: AppColors.background,
       leading: IconButton(
-        icon: const Icon(LucideIcons.arrowLeft, color: Colors.white),
+        icon: const Icon(Icons.arrow_back, color: Colors.white),
         onPressed: () => Navigator.pop(context),
       ),
       actions: [
-        IconButton(icon: const Icon(LucideIcons.bookmark, color: Colors.white), onPressed: () {}),
-        IconButton(icon: const Icon(LucideIcons.share2, color: Colors.white), onPressed: () {}),
+        IconButton(icon: const Icon(Icons.bookmark_border, color: Colors.white), onPressed: () {}),
+        IconButton(icon: const Icon(Icons.share, color: Colors.white), onPressed: () {}),
         const SizedBox(width: 8),
       ],
       flexibleSpace: FlexibleSpaceBar(
@@ -156,7 +155,7 @@ class ArticleDetailScreen extends StatelessWidget {
         Expanded(
           child: OutlinedButton.icon(
             onPressed: () {},
-            icon: const Icon(LucideIcons.bookmark),
+            icon: const Icon(Icons.bookmark_border),
             label: const Text("Save Article"),
             style: OutlinedButton.styleFrom(
               padding: const EdgeInsets.symmetric(vertical: 16),
@@ -169,7 +168,7 @@ class ArticleDetailScreen extends StatelessWidget {
         Expanded(
           child: ElevatedButton.icon(
             onPressed: () {},
-            icon: const Icon(LucideIcons.share2),
+            icon: const Icon(Icons.share),
             label: const Text("Share Insight"),
             style: ElevatedButton.styleFrom(
               backgroundColor: AppColors.primaryBlue,

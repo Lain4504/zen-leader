@@ -58,7 +58,7 @@ class MyCoursesScreen extends StatelessWidget {
         if (isCompleted)
           _buildPremiumCourseCard(
             "Mindful thinking",
-            "Giảng viên Cao Anh",
+            "Instructor Cao Anh",
             1.0,
             true,
           ),

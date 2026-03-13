@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:lucide_icons/lucide_icons.dart';
 import 'package:zen_leader/theme/app_colors.dart';
 import 'package:zen_leader/screens/seminar_detail_screen.dart';
 
@@ -78,7 +77,7 @@ class JoinSeminarScreen extends StatelessWidget {
                   hintText: "Search topic or instructor...",
                   hintStyle: GoogleFonts.nunito(color: Colors.grey),
                   border: InputBorder.none,
-                  icon: const Icon(LucideIcons.search, color: Colors.grey, size: 20),
+                  icon: const Icon(Icons.search, color: Colors.grey, size: 20),
                 ),
               ),
             ),
@@ -201,7 +200,7 @@ class JoinSeminarScreen extends StatelessWidget {
                     ),
                     child: Row(
                       children: [
-                        const Icon(LucideIcons.users, color: Colors.white, size: 12),
+                        const Icon(Icons.people_alt_outlined, color: Colors.white, size: 12),
                         const SizedBox(width: 4),
                         Text(
                           participants,

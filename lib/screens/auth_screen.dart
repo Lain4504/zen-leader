@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:lucide_icons/lucide_icons.dart';
 import 'package:zen_leader/theme/app_colors.dart';
 import 'package:zen_leader/main.dart';
 
@@ -139,9 +138,9 @@ class _AuthScreenState extends State<AuthScreen> with SingleTickerProviderStateM
   Widget _buildLoginForm() {
     return Column(
       children: [
-        _buildInputField("Email / Username", LucideIcons.mail),
+        _buildInputField("Email / Username", Icons.email_outlined),
         const SizedBox(height: 16),
-        _buildInputField("Password", LucideIcons.lock, isPassword: true),
+        _buildInputField("Password", Icons.lock_outline, isPassword: true),
         const SizedBox(height: 12),
         Align(
           alignment: Alignment.centerRight,
@@ -162,11 +161,11 @@ class _AuthScreenState extends State<AuthScreen> with SingleTickerProviderStateM
   Widget _buildSignUpForm() {
     return Column(
       children: [
-        _buildInputField("Full name", LucideIcons.user),
+        _buildInputField("Full name", Icons.person_outline),
         const SizedBox(height: 16),
-        _buildInputField("Email", LucideIcons.mail),
+        _buildInputField("Email", Icons.email_outlined),
         const SizedBox(height: 16),
-        _buildInputField("New password", LucideIcons.lock, isPassword: true),
+        _buildInputField("New password", Icons.lock_outline, isPassword: true),
         const SizedBox(height: 32),
         _buildPrimaryButton("CREATE ACCOUNT"),
       ],
@@ -238,9 +237,9 @@ class _AuthScreenState extends State<AuthScreen> with SingleTickerProviderStateM
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            _buildSocialIcon(LucideIcons.chrome, Colors.redAccent),
+            _buildSocialIcon(Icons.public, Colors.redAccent),
             const SizedBox(width: 32),
-            _buildSocialIcon(LucideIcons.apple, Colors.black),
+            _buildSocialIcon(Icons.apple, Colors.black),
           ],
         ),
       ],

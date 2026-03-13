@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:lucide_icons/lucide_icons.dart';
 import 'package:zen_leader/theme/app_colors.dart';
 import 'package:zen_leader/screens/language_selection_screen.dart';
 import 'package:zen_leader/screens/settings_screen.dart';
-import 'package:zen_leader/screens/auth_screen.dart';
 import 'package:zen_leader/screens/my_courses_screen.dart';
 
 class ProfileScreen extends StatelessWidget {
@@ -18,7 +16,7 @@ class ProfileScreen extends StatelessWidget {
         backgroundColor: Colors.white,
         elevation: 0,
         actions: [
-          IconButton(onPressed: () {}, icon: const Icon(LucideIcons.settings, color: Colors.grey)),
+          IconButton(onPressed: () {}, icon: const Icon(Icons.settings_outlined, color: Colors.grey)),
         ],
       ),
       body: SingleChildScrollView(
@@ -79,7 +77,7 @@ class ProfileScreen extends StatelessWidget {
               Container(
                 padding: const EdgeInsets.all(8),
                 decoration: const BoxDecoration(color: Colors.amber, shape: BoxShape.circle),
-                child: const Icon(LucideIcons.camera, color: Colors.white, size: 18),
+                child: const Icon(Icons.photo_camera_outlined, color: Colors.white, size: 18),
               ),
             ],
           ),
@@ -99,7 +97,7 @@ class ProfileScreen extends StatelessWidget {
             child: Row(
               mainAxisSize: MainAxisSize.min,
               children: [
-                const Icon(LucideIcons.award, color: AppColors.primaryBlue, size: 16),
+                const Icon(Icons.emoji_events_outlined, color: AppColors.primaryBlue, size: 16),
                 const SizedBox(width: 8),
                 Text(
                   "Master Level",
@@ -124,9 +122,9 @@ class ProfileScreen extends StatelessWidget {
         crossAxisSpacing: 16,
         childAspectRatio: 0.9,
         children: [
-          _buildStatCard(LucideIcons.flame, "12", "Day Streak", Colors.orange),
-          _buildStatCard(LucideIcons.zap, "1450", "Total Zen XP", Colors.amber),
-          _buildStatCard(LucideIcons.trello, "#4", "Current rank", AppColors.primaryBlue),
+          _buildStatCard(Icons.local_fire_department, "12", "Day Streak", Colors.orange),
+          _buildStatCard(Icons.bolt, "1450", "Total Zen XP", Colors.amber),
+          _buildStatCard(Icons.emoji_events_outlined, "#4", "Current rank", AppColors.primaryBlue),
         ],
       ),
     );
@@ -176,9 +174,9 @@ class ProfileScreen extends StatelessWidget {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
-                _buildBadge(LucideIcons.wind, "Meditator"),
-                _buildBadge(LucideIcons.sun, "Mindful"),
-                _buildBadge(LucideIcons.shieldCheck, "Steadfast"),
+                _buildBadge(Icons.air, "Meditator"),
+                _buildBadge(Icons.wb_sunny_outlined, "Mindful"),
+                _buildBadge(Icons.verified_outlined, "Steadfast"),
               ],
             ),
           ),
@@ -237,11 +235,11 @@ class ProfileScreen extends StatelessWidget {
                   color: AppColors.primaryBlue.withOpacity(0.1),
                   shape: BoxShape.circle,
                 ),
-                child: const Icon(LucideIcons.languages, color: AppColors.primaryBlue, size: 20),
+                child: const Icon(Icons.language, color: AppColors.primaryBlue, size: 20),
               ),
               title: Text("Language", style: GoogleFonts.nunito(fontWeight: FontWeight.bold)),
               subtitle: Text("English", style: GoogleFonts.nunito(color: Colors.grey, fontSize: 12)),
-              trailing: const Icon(LucideIcons.chevronRight, color: Colors.grey, size: 20),
+              trailing: const Icon(Icons.chevron_right, color: Colors.grey, size: 20),
             ),
           ),
         ],

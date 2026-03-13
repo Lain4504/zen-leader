@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:zen_leader/theme/app_colors.dart';
-import 'package:zen_leader/screens/auth_screen.dart';
+import 'package:zen_leader/screens/language_selection_screen.dart';
 
 class OnboardingScreen extends StatefulWidget {
   const OnboardingScreen({super.key});
@@ -162,7 +162,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
   }
 
   void _navigateToAuth() {
-    Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => const AuthScreen()));
+    Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => const LanguageSelectionScreen()));
   }
 }
 

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:lucide_icons/lucide_icons.dart';
 import 'package:zen_leader/theme/app_colors.dart';
 import 'package:zen_leader/screens/chat_detail_screen.dart';
 
@@ -19,7 +18,7 @@ class MessagesScreen extends StatelessWidget {
         actions: [
           IconButton(
             onPressed: () {},
-            icon: const Icon(LucideIcons.edit, color: AppColors.primaryBlue),
+            icon: const Icon(Icons.edit_outlined, color: AppColors.primaryBlue),
           ),
         ],
       ),
@@ -38,7 +37,7 @@ class MessagesScreen extends StatelessWidget {
                   hintText: "Search conversations...",
                   hintStyle: GoogleFonts.nunito(color: Colors.grey),
                   border: InputBorder.none,
-                  icon: const Icon(LucideIcons.search, color: Colors.grey, size: 20),
+                  icon: const Icon(Icons.search, color: Colors.grey, size: 20),
                 ),
               ),
             ),
@@ -109,7 +108,7 @@ class MessagesScreen extends StatelessWidget {
       leading: const CircleAvatar(
         radius: 28,
         backgroundColor: AppColors.background,
-        child: Icon(LucideIcons.user, color: Colors.grey),
+        child: Icon(Icons.person, color: Colors.grey),
       ),
       title: Row(
         children: [

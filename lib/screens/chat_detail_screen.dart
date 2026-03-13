@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:lucide_icons/lucide_icons.dart';
 import 'package:zen_leader/theme/app_colors.dart';
 
 class ChatDetailScreen extends StatelessWidget {
@@ -140,7 +139,7 @@ class ChatDetailScreen extends StatelessWidget {
                 color: AppColors.primaryBlue.withOpacity(0.1),
                 borderRadius: const BorderRadius.vertical(top: Radius.circular(20)),
               ),
-              child: const Center(child: Icon(LucideIcons.playCircle, size: 40, color: AppColors.primaryBlue)),
+              child: const Center(child: Icon(Icons.play_circle_outline, size: 40, color: AppColors.primaryBlue)),
             ),
             Padding(
               padding: const EdgeInsets.all(12),
@@ -178,7 +177,7 @@ class ChatDetailScreen extends StatelessWidget {
         top: false,
         child: Row(
           children: [
-            const Icon(LucideIcons.plusCircle, color: Colors.grey),
+            const Icon(Icons.add_circle_outline, color: Colors.grey),
             const SizedBox(width: 12),
             Expanded(
               child: Container(
@@ -197,7 +196,7 @@ class ChatDetailScreen extends StatelessWidget {
               ),
             ),
             const SizedBox(width: 12),
-            const Icon(LucideIcons.mic, color: Colors.grey),
+            const Icon(Icons.mic_none, color: Colors.grey),
             const SizedBox(width: 12),
             Container(
               padding: const EdgeInsets.all(12),
@@ -205,7 +204,7 @@ class ChatDetailScreen extends StatelessWidget {
                 color: AppColors.primaryBlue,
                 shape: BoxShape.circle,
               ),
-              child: const Icon(LucideIcons.send, color: Colors.white, size: 18),
+              child: const Icon(Icons.send, color: Colors.white, size: 18),
             ),
           ],
         ),

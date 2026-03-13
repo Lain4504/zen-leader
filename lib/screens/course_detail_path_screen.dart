@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:lucide_icons/lucide_icons.dart';
 import 'package:zen_leader/theme/app_colors.dart';
 import 'package:zen_leader/screens/learning_day_detail_screen.dart';
 
@@ -118,9 +117,9 @@ class CourseDetailPathScreen extends StatelessWidget {
                   decoration: BoxDecoration(color: nodeColor, shape: BoxShape.circle),
                   child: Center(
                     child: isLocked
-                        ? const Icon(LucideIcons.lock, color: Colors.white, size: 20)
+                        ? const Icon(Icons.lock, color: Colors.white, size: 20)
                         : isCompleted
-                            ? const Icon(LucideIcons.check, color: Colors.white, size: 24)
+                            ? const Icon(Icons.check, color: Colors.white, size: 24)
                             : Text(
                                 "$index",
                                 style: GoogleFonts.fredoka(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 20),
@@ -158,7 +157,7 @@ class CourseDetailPathScreen extends StatelessWidget {
       child: Row(
         mainAxisSize: MainAxisSize.min,
         children: [
-          const Icon(LucideIcons.playCircle, color: Colors.white, size: 20),
+          const Icon(Icons.play_circle_outline, color: Colors.white, size: 20),
           const SizedBox(width: 12),
           Text(
             "ENROLL NOW",

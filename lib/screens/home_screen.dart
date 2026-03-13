@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:lucide_icons/lucide_icons.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:percent_indicator/linear_percent_indicator.dart';
 import 'package:zen_leader/theme/app_colors.dart';
+import 'package:zen_leader/screens/article_detail_screen.dart';
 import 'package:zen_leader/screens/lesson_screen.dart';
 import 'package:zen_leader/screens/zen_leader_pathway_screen.dart';
 
@@ -28,7 +28,7 @@ class HomeScreen extends StatelessWidget {
               const SizedBox(height: 32),
               _buildUpcomingEvents(),
               const SizedBox(height: 32),
-              _buildInsights(),
+              _buildInsights(context),
               const SizedBox(height: 32),
               _buildDailyPractice(),
               const SizedBox(height: 40),
@@ -50,12 +50,12 @@ class HomeScreen extends StatelessWidget {
               CircleAvatar(
                 radius: 24,
                 backgroundColor: AppColors.primaryBlue.withOpacity(0.1),
-                child: const Icon(LucideIcons.user, color: AppColors.primaryBlue),
+                child: const Icon(Icons.person, color: AppColors.primaryBlue),
               ),
               const Spacer(),
-              _buildStatChip(LucideIcons.flame, "12", Colors.orange),
+              _buildStatChip(Icons.local_fire_department, "12", Colors.orange),
               const SizedBox(width: 8),
-              _buildStatChip(LucideIcons.star, "1450", Colors.amber),
+              _buildStatChip(Icons.star, "1450", Colors.amber),
             ],
           ),
           const SizedBox(height: 24),
@@ -126,13 +126,13 @@ class HomeScreen extends StatelessWidget {
             scrollDirection: Axis.horizontal,
             padding: const EdgeInsets.symmetric(horizontal: 24),
             children: [
-              _buildPathNode("FEBI-4U", LucideIcons.zap, true, false),
+              _buildPathNode("FEBI-4U", Icons.bolt, true, false),
               _buildPathConnector(true),
-              _buildPathNode("ZL 1", LucideIcons.lotus, false, true),
+              _buildPathNode("ZL 1", Icons.spa, false, true),
               _buildPathConnector(false),
-              _buildPathNode("ZL 2", LucideIcons.mountain, false, false),
+              _buildPathNode("ZL 2", Icons.terrain, false, false),
               _buildPathConnector(false),
-              _buildPathNode("ZL 3", LucideIcons.compass, false, false),
+              _buildPathNode("ZL 3", Icons.explore, false, false),
             ],
           ),
         ),
@@ -156,7 +156,7 @@ class HomeScreen extends StatelessWidget {
             ],
           ),
           child: Icon(
-            done ? LucideIcons.check : (active ? icon : LucideIcons.lock),
+            done ? Icons.check : (active ? icon : Icons.lock),
             color: Colors.white,
             size: 28,
           ),
@@ -348,7 +348,7 @@ class HomeScreen extends StatelessWidget {
                 const SizedBox(height: 4),
                 Row(
                   children: [
-                    const Icon(LucideIcons.mapPin, size: 12, color: Colors.grey),
+                    const Icon(Icons.location_on, size: 12, color: Colors.grey),
                     const SizedBox(width: 4),
                     Text(location, style: GoogleFonts.nunito(fontSize: 12, color: Colors.grey)),
                     const SizedBox(width: 8),
@@ -367,7 +367,7 @@ class HomeScreen extends StatelessWidget {
     );
   }
 
-  Widget _buildInsights() {
+  Widget _buildInsights(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -401,7 +401,7 @@ class HomeScreen extends StatelessWidget {
 
   Widget _buildInsightCard(BuildContext context, String title, String desc, String img) {
     return GestureDetector(
-      onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => const ArticleDetailScreen())),
+      onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => ArticleDetailScreen())),
       child: Container(
         width: 220,
         decoration: BoxDecoration(
@@ -455,7 +455,7 @@ class HomeScreen extends StatelessWidget {
                 Container(
                   padding: const EdgeInsets.all(12),
                   decoration: BoxDecoration(color: Colors.white.withOpacity(0.2), shape: BoxShape.circle),
-                  child: const Icon(LucideIcons.target, color: Colors.white, size: 32),
+                  child: const Icon(Icons.track_changes, color: Colors.white, size: 32),
                 ),
                 const SizedBox(width: 16),
                 Expanded(

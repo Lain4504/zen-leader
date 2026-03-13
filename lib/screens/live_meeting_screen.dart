@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:lucide_icons/lucide_icons.dart';
 import 'package:zen_leader/theme/app_colors.dart';
 
 class LiveMeetingScreen extends StatefulWidget {
@@ -69,10 +68,10 @@ class _LiveMeetingScreenState extends State<LiveMeetingScreen> {
                 border: Border.all(color: Colors.white24),
               ),
               child: _isCameraOff 
-                ? const Center(child: Icon(LucideIcons.videoOff, color: Colors.white, size: 24))
+                ? const Center(child: Icon(Icons.videocam_off, color: Colors.white, size: 24))
                 : const ClipRRect(
                   borderRadius: BorderRadius.all(Radius.circular(12)),
-                  child: Center(child: Icon(LucideIcons.user, color: Colors.white38, size: 40)),
+                  child: Center(child: Icon(Icons.person, color: Colors.white38, size: 40)),
                 ),
             ),
           ),
@@ -112,7 +111,7 @@ class _LiveMeetingScreenState extends State<LiveMeetingScreen> {
               overflow: TextOverflow.ellipsis,
             ),
           ),
-          const Icon(LucideIcons.users, color: Colors.white70, size: 16),
+          const Icon(Icons.people_alt_outlined, color: Colors.white70, size: 16),
           const SizedBox(width: 4),
           Text("456", style: GoogleFonts.nunito(color: Colors.white70, fontSize: 12)),
         ],
@@ -134,18 +133,18 @@ class _LiveMeetingScreenState extends State<LiveMeetingScreen> {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           _buildControlButton(
-            _isMuted ? LucideIcons.micOff : LucideIcons.mic,
+            _isMuted ? Icons.mic_off : Icons.mic,
             _isMuted ? Colors.red : Colors.white24,
             () => setState(() => _isMuted = !_isMuted),
           ),
           _buildControlButton(
-            _isCameraOff ? LucideIcons.videoOff : LucideIcons.video,
+            _isCameraOff ? Icons.videocam_off : Icons.videocam,
             _isCameraOff ? Colors.red : Colors.white24,
             () => setState(() => _isCameraOff = !_isCameraOff),
           ),
-          _buildControlButton(LucideIcons.hand, Colors.white24, () {}),
-          _buildControlButton(LucideIcons.messageCircle, Colors.white24, () => _showChat(context)),
-          _buildControlButton(LucideIcons.logOut, Colors.red.withOpacity(0.8), () => Navigator.pop(context)),
+          _buildControlButton(Icons.back_hand_outlined, Colors.white24, () {}),
+          _buildControlButton(Icons.chat_bubble_outline, Colors.white24, () => _showChat(context)),
+          _buildControlButton(Icons.logout, Colors.red.withOpacity(0.8), () => Navigator.pop(context)),
         ],
       ),
     );
@@ -234,7 +233,7 @@ class _LiveMeetingScreenState extends State<LiveMeetingScreen> {
               decoration: InputDecoration(hintText: "Type a message...", border: InputBorder.none, hintStyle: GoogleFonts.nunito(fontSize: 14)),
             ),
           ),
-          const Icon(LucideIcons.send, color: AppColors.primaryBlue, size: 20),
+          const Icon(Icons.send, color: AppColors.primaryBlue, size: 20),
         ],
       ),
     );

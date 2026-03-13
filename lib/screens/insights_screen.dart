@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:lucide_icons/lucide_icons.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:zen_leader/theme/app_colors.dart';
 import 'package:zen_leader/screens/article_detail_screen.dart';
@@ -96,7 +95,7 @@ class _InsightsScreenState extends State<InsightsScreen> {
         ),
         child: Row(
           children: [
-            const Icon(LucideIcons.search, color: Colors.grey, size: 20),
+            const Icon(Icons.search, color: Colors.grey, size: 20),
             const SizedBox(width: 12),
             Expanded(
               child: TextField(
@@ -285,11 +284,11 @@ class _InsightsScreenState extends State<InsightsScreen> {
                   const SizedBox(height: 8),
                   Row(
                     children: [
-                      const Icon(LucideIcons.clock, size: 12, color: Colors.grey),
+                      const Icon(Icons.schedule, size: 12, color: Colors.grey),
                       const SizedBox(width: 4),
                       Text(article['time']!, style: GoogleFonts.nunito(color: Colors.grey, fontSize: 11)),
                       const Spacer(),
-                      const Icon(LucideIcons.bookmark, size: 16, color: Colors.grey),
+                      const Icon(Icons.bookmark_border, size: 16, color: Colors.grey),
                     ],
                   ),
                 ],

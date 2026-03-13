@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:lucide_icons/lucide_icons.dart';
 import 'package:percent_indicator/linear_percent_indicator.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:zen_leader/theme/app_colors.dart';
@@ -27,7 +26,7 @@ class ProgramsScreen extends StatelessWidget {
         ),
         actions: [
           IconButton(
-            icon: const Icon(LucideIcons.search, color: AppColors.primaryBlue),
+            icon: const Icon(Icons.search, color: AppColors.primaryBlue),
             onPressed: () {},
           ),
           const SizedBox(width: 8),

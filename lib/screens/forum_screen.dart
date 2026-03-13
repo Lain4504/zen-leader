@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:lucide_icons/lucide_icons.dart';
 import 'package:zen_leader/theme/app_colors.dart';
 import 'package:zen_leader/screens/create_post_screen.dart';
 
@@ -33,7 +32,7 @@ class _ForumScreenState extends State<ForumScreen> {
         actions: [
           IconButton(
             onPressed: () {},
-            icon: const Icon(LucideIcons.search, color: AppColors.accentDark),
+            icon: const Icon(Icons.search, color: AppColors.accentDark),
           ),
         ],
       ),
@@ -88,7 +87,7 @@ class _ForumScreenState extends State<ForumScreen> {
         },
         backgroundColor: AppColors.primaryBlue,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
-        child: const Icon(LucideIcons.penTool, color: Colors.white),
+        child: const Icon(Icons.edit, color: Colors.white),
       ),
     );
   }
@@ -216,11 +215,11 @@ class _ForumScreenState extends State<ForumScreen> {
                   ),
                 ),
                 const Spacer(),
-                const Icon(LucideIcons.messageCircle, size: 14, color: Colors.grey),
+                const Icon(Icons.chat_bubble_outline, size: 14, color: Colors.grey),
                 const SizedBox(width: 4),
                 Text("$replies", style: GoogleFonts.nunito(color: Colors.grey, fontSize: 12)),
                 const SizedBox(width: 16),
-                const Icon(LucideIcons.thumbsUp, size: 14, color: Colors.grey),
+                const Icon(Icons.thumb_up_off_alt, size: 14, color: Colors.grey),
                 const SizedBox(width: 4),
                 Text("$likes", style: GoogleFonts.nunito(color: Colors.grey, fontSize: 12)),
               ],
@@ -335,7 +334,7 @@ class ForumThreadScreen extends StatelessWidget {
               color: AppColors.primaryBlue.withOpacity(0.1),
               borderRadius: BorderRadius.circular(12),
             ),
-            child: const Icon(LucideIcons.bookOpen, color: AppColors.primaryBlue, size: 24),
+            child: const Icon(Icons.menu_book_outlined, color: AppColors.primaryBlue, size: 24),
           ),
           const SizedBox(width: 16),
           Expanded(
@@ -353,7 +352,7 @@ class ForumThreadScreen extends StatelessWidget {
               ],
             ),
           ),
-          const Icon(LucideIcons.chevronRight, color: Colors.grey, size: 20),
+          const Icon(Icons.chevron_right, color: Colors.grey, size: 20),
         ],
       ),
     );
@@ -384,11 +383,11 @@ class ForumThreadScreen extends StatelessWidget {
           const SizedBox(height: 12),
           Row(
             children: [
-              const Icon(LucideIcons.thumbsUp, size: 14, color: AppColors.primaryBlue),
+              const Icon(Icons.thumb_up, size: 14, color: AppColors.primaryBlue),
               const SizedBox(width: 4),
               Text("Like", style: GoogleFonts.nunito(color: AppColors.primaryBlue, fontSize: 12, fontWeight: FontWeight.bold)),
               const SizedBox(width: 24),
-              const Icon(LucideIcons.reply, size: 14, color: Colors.grey),
+              const Icon(Icons.reply, size: 14, color: Colors.grey),
               const SizedBox(width: 4),
               Text("Reply", style: GoogleFonts.nunito(color: Colors.grey, fontSize: 12)),
             ],
@@ -415,7 +414,7 @@ class ForumThreadScreen extends StatelessWidget {
         top: false,
         child: Row(
           children: [
-            const Icon(LucideIcons.paperclip, color: Colors.grey),
+            const Icon(Icons.attach_file, color: Colors.grey),
             const SizedBox(width: 12),
             Expanded(
               child: Container(
@@ -440,7 +439,7 @@ class ForumThreadScreen extends StatelessWidget {
                 color: AppColors.primaryBlue,
                 shape: BoxShape.circle,
               ),
-              child: const Icon(LucideIcons.send, color: Colors.white, size: 18),
+              child: const Icon(Icons.send, color: Colors.white, size: 18),
             ),
           ],
         ),

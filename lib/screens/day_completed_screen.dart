@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:lucide_icons/lucide_icons.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:zen_leader/theme/app_colors.dart';
 
@@ -93,7 +92,7 @@ class DayCompletedScreen extends StatelessWidget {
                 BoxShadow(color: Colors.black12, blurRadius: 20, offset: Offset(0, 10)),
               ],
             ),
-            child: const Icon(LucideIcons.award, size: 60, color: Colors.amber),
+            child: const Icon(Icons.emoji_events, size: 60, color: Colors.amber),
           ).animate().scale(duration: 800.ms, curve: Curves.elasticOut),
         ],
       ),
@@ -104,9 +103,9 @@ class DayCompletedScreen extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        _buildRewardCard("+100 XP", LucideIcons.zap, Colors.amber),
+        _buildRewardCard("+100 XP", Icons.bolt, Colors.amber),
         const SizedBox(width: 20),
-        _buildRewardCard("+1 Ngày", LucideIcons.flame, Colors.orange),
+        _buildRewardCard("+1 Day", Icons.local_fire_department, Colors.orange),
       ],
     ).animate().fadeIn(delay: 500.ms).slideY(begin: 0.1, end: 0);
   }

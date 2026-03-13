@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:lucide_icons/lucide_icons.dart';
 import 'package:zen_leader/theme/app_colors.dart';
 import 'package:zen_leader/screens/live_meeting_screen.dart';
 
@@ -90,7 +89,7 @@ class SeminarDetailScreen extends StatelessWidget {
             child: CircleAvatar(
               backgroundColor: Colors.white,
               child: IconButton(
-                icon: const Icon(LucideIcons.arrowLeft, color: AppColors.accentDark),
+                icon: const Icon(Icons.arrow_back, color: AppColors.accentDark),
                 onPressed: () => Navigator.pop(context),
               ),
             ),
@@ -120,7 +119,7 @@ class SeminarDetailScreen extends StatelessWidget {
               ),
             ),
             Text(
-              "Tác giả 'Hiểu về trái tim', chuyên gia tâm lý",
+              "Author of 'Understanding the Heart', psychologist",
               style: GoogleFonts.nunito(
                 fontSize: 13,
                 color: AppColors.textMuted,
@@ -142,9 +141,9 @@ class SeminarDetailScreen extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
-          _buildInfoItem(LucideIcons.calendar, "25/12/2023"),
-          _buildInfoItem(LucideIcons.clock, "15:00 - 17:00"),
-          _buildInfoItem(LucideIcons.users, "450+ học viên"),
+          _buildInfoItem(Icons.calendar_month, "25/12/2023"),
+          _buildInfoItem(Icons.schedule, "15:00 - 17:00"),
+          _buildInfoItem(Icons.people_alt_outlined, "450+ learners"),
         ],
       ),
     );
@@ -218,7 +217,7 @@ class SeminarDetailScreen extends StatelessWidget {
           padding: const EdgeInsets.only(bottom: 12),
           child: Row(
             children: [
-              const Icon(LucideIcons.checkCircle2, color: AppColors.teal, size: 20),
+              const Icon(Icons.check_circle_outline, color: AppColors.teal, size: 20),
               const SizedBox(width: 12),
               Expanded(
                 child: Text(

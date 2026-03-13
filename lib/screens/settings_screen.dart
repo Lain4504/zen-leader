@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:lucide_icons/lucide_icons.dart';
 import 'package:zen_leader/theme/app_colors.dart';
 
 class SettingsScreen extends StatelessWidget {
@@ -14,7 +13,7 @@ class SettingsScreen extends StatelessWidget {
         backgroundColor: Colors.white,
         elevation: 0,
         leading: IconButton(
-          icon: const Icon(LucideIcons.chevronLeft, color: AppColors.accentDark),
+          icon: const Icon(Icons.arrow_back_ios_new, color: AppColors.accentDark),
           onPressed: () => Navigator.pop(context),
         ),
         title: Text(
@@ -27,20 +26,20 @@ class SettingsScreen extends StatelessWidget {
         padding: const EdgeInsets.all(24),
         children: [
           _buildSettingsSection("APP", [
-            _buildSettingsItem(LucideIcons.moon, "Dark mode", hasSwitch: true),
-            _buildSettingsItem(LucideIcons.bell, "Push notifications", hasSwitch: true),
-            _buildSettingsItem(LucideIcons.clock, "Study reminders", hasSwitch: true),
+            _buildSettingsItem(Icons.dark_mode_outlined, "Dark mode", hasSwitch: true),
+            _buildSettingsItem(Icons.notifications_none, "Push notifications", hasSwitch: true),
+            _buildSettingsItem(Icons.schedule, "Study reminders", hasSwitch: true),
           ]),
           const SizedBox(height: 32),
           _buildSettingsSection("ACCOUNT & PRIVACY", [
-            _buildSettingsItem(LucideIcons.shieldCheck, "Privacy"),
-            _buildSettingsItem(LucideIcons.lock, "Change password"),
-            _buildSettingsItem(LucideIcons.trash2, "Delete account", isDestructive: true),
+            _buildSettingsItem(Icons.verified_user_outlined, "Privacy"),
+            _buildSettingsItem(Icons.lock_outline, "Change password"),
+            _buildSettingsItem(Icons.delete_outline, "Delete account", isDestructive: true),
           ]),
           const SizedBox(height: 32),
           _buildSettingsSection("SUPPORT", [
-            _buildSettingsItem(LucideIcons.helpCircle, "Help center"),
-            _buildSettingsItem(LucideIcons.fileText, "Terms of service"),
+            _buildSettingsItem(Icons.help_outline, "Help center"),
+            _buildSettingsItem(Icons.description_outlined, "Terms of service"),
           ]),
           const SizedBox(height: 48),
           Center(
@@ -88,8 +87,8 @@ class SettingsScreen extends StatelessWidget {
         ),
       ),
       trailing: hasSwitch 
-        ? Switch(value: icon == LucideIcons.moon ? false : true, onChanged: (v) {}, activeColor: AppColors.primaryBlue)
-        : const Icon(LucideIcons.chevronRight, size: 18, color: Colors.grey),
+        ? Switch(value: icon == Icons.dark_mode_outlined ? false : true, onChanged: (v) {}, activeColor: AppColors.primaryBlue)
+        : const Icon(Icons.chevron_right, size: 18, color: Colors.grey),
       onTap: () {},
     );
   }

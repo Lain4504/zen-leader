@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:lucide_icons/lucide_icons.dart';
 import 'package:zen_leader/theme/app_colors.dart';
 
 class LiveScheduleScreen extends StatefulWidget {
@@ -131,7 +130,7 @@ class _LiveScheduleScreenState extends State<LiveScheduleScreen> {
           const SizedBox(width: 8),
           _buildOptionChip("This week", false),
           const Spacer(),
-          const Icon(LucideIcons.calendar, size: 20, color: AppColors.primaryBlue),
+          const Icon(Icons.calendar_month, size: 20, color: AppColors.primaryBlue),
         ],
       ),
     );
@@ -252,9 +251,9 @@ class _LiveScheduleScreenState extends State<LiveScheduleScreen> {
           const SizedBox(height: 20),
           Row(
             children: [
-              _buildInfoItem(LucideIcons.clock, time),
+              _buildInfoItem(Icons.schedule, time),
               const SizedBox(width: 16),
-              _buildInfoItem(LucideIcons.hourglass, duration),
+              _buildInfoItem(Icons.hourglass_bottom, duration),
             ],
           ),
           const SizedBox(height: 20),
@@ -267,7 +266,7 @@ class _LiveScheduleScreenState extends State<LiveScheduleScreen> {
   Widget _buildParticipantIcon(String count) {
     return Row(
       children: [
-        const Icon(LucideIcons.users, size: 14, color: Colors.grey),
+        const Icon(Icons.people_alt_outlined, size: 14, color: Colors.grey),
         const SizedBox(width: 4),
         Text(count, style: GoogleFonts.nunito(color: Colors.grey, fontSize: 12)),
       ],
@@ -286,16 +285,16 @@ class _LiveScheduleScreenState extends State<LiveScheduleScreen> {
 
   Widget _buildActionButton(String status) {
     String label = "Join now";
-    IconData icon = LucideIcons.video;
+    IconData icon = Icons.videocam_outlined;
     bool isOutline = false;
 
     if (status == "Upcoming") {
       label = "Remind me";
-      icon = LucideIcons.bell;
+      icon = Icons.notifications_none;
       isOutline = true;
     } else if (status == "Completed") {
       label = "Watch recording";
-      icon = LucideIcons.playCircle;
+      icon = Icons.play_circle_outline;
       isOutline = true;
     }
 

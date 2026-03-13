@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:lucide_icons/lucide_icons.dart';
 import 'package:zen_leader/theme/app_colors.dart';
 
 class CreatePostScreen extends StatefulWidget {
@@ -80,9 +79,9 @@ class _CreatePostScreenState extends State<CreatePostScreen> {
         ),
         child: Row(
           children: [
-            IconButton(icon: const Icon(LucideIcons.image, color: Colors.grey), onPressed: () {}),
-            IconButton(icon: const Icon(LucideIcons.list, color: Colors.grey), onPressed: () {}),
-            IconButton(icon: const Icon(LucideIcons.paperclip, color: Colors.grey), onPressed: () {}),
+            IconButton(icon: const Icon(Icons.image_outlined, color: Colors.grey), onPressed: () {}),
+            IconButton(icon: const Icon(Icons.format_list_bulleted, color: Colors.grey), onPressed: () {}),
+            IconButton(icon: const Icon(Icons.attach_file, color: Colors.grey), onPressed: () {}),
           ],
         ),
       ),
@@ -94,7 +93,7 @@ class _CreatePostScreenState extends State<CreatePostScreen> {
       padding: const EdgeInsets.symmetric(vertical: 8),
       child: Row(
         children: [
-          const Icon(LucideIcons.bookOpen, color: AppColors.primaryBlue, size: 20),
+          const Icon(Icons.menu_book_outlined, color: AppColors.primaryBlue, size: 20),
           const SizedBox(width: 12),
           Text(
             "Related course:",
@@ -108,7 +107,7 @@ class _CreatePostScreenState extends State<CreatePostScreen> {
               overflow: TextOverflow.ellipsis,
             ),
           ),
-          const Icon(LucideIcons.chevronDown, size: 16, color: Colors.grey),
+          const Icon(Icons.expand_more, size: 16, color: Colors.grey),
         ],
       ),
     );

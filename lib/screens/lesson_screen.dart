@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:lucide_icons/lucide_icons.dart';
 import 'package:zen_leader/theme/app_colors.dart';
 import 'package:zen_leader/screens/day_completed_screen.dart';
 
@@ -22,7 +21,7 @@ class _LessonScreenState extends State<LessonScreen> {
         backgroundColor: Colors.white,
         elevation: 0,
         leading: IconButton(
-          icon: const Icon(LucideIcons.x, color: Colors.grey),
+          icon: const Icon(Icons.close, color: Colors.grey),
           onPressed: () => Navigator.pop(context),
         ),
         title: ClipRRect(
@@ -116,7 +115,7 @@ class _LessonScreenState extends State<LessonScreen> {
               ),
             ),
             if (isSelected)
-              const Icon(LucideIcons.checkCircle, color: AppColors.primaryBlue, size: 24),
+              const Icon(Icons.check_circle, color: AppColors.primaryBlue, size: 24),
           ],
         ),
       ),

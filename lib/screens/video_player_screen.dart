@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:lucide_icons/lucide_icons.dart';
 import 'package:zen_leader/theme/app_colors.dart';
 import 'package:zen_leader/screens/day_completed_screen.dart';
 
@@ -31,7 +30,7 @@ class _VideoPlayerScreenState extends State<VideoPlayerScreen> {
               child: Stack(
                 alignment: Alignment.center,
                 children: [
-                  const Icon(LucideIcons.playCircle, color: Colors.white, size: 80),
+                  const Icon(Icons.play_circle_fill, color: Colors.white, size: 80),
                   Positioned(
                     bottom: 0,
                     left: 0,
@@ -59,7 +58,7 @@ class _VideoPlayerScreenState extends State<VideoPlayerScreen> {
       child: Row(
         children: [
           IconButton(
-            icon: const Icon(LucideIcons.chevronLeft, color: Colors.white, size: 28),
+            icon: const Icon(Icons.arrow_back_ios_new, color: Colors.white, size: 28),
             onPressed: () => Navigator.pop(context),
           ),
           const SizedBox(width: 8),
@@ -70,7 +69,7 @@ class _VideoPlayerScreenState extends State<VideoPlayerScreen> {
               overflow: TextOverflow.ellipsis,
             ),
           ),
-          const Icon(LucideIcons.moreVertical, color: Colors.white),
+          const Icon(Icons.more_vert, color: Colors.white),
         ],
       ),
     );
@@ -105,15 +104,15 @@ class _VideoPlayerScreenState extends State<VideoPlayerScreen> {
           Row(
             children: [
               IconButton(
-                icon: Icon(_isPlaying ? LucideIcons.pause : LucideIcons.play, color: Colors.white, size: 20),
+                icon: Icon(_isPlaying ? Icons.pause : Icons.play_arrow, color: Colors.white, size: 20),
                 onPressed: () => setState(() => _isPlaying = !_isPlaying),
               ),
               const SizedBox(width: 8),
               Text("03:45 / 15:20", style: GoogleFonts.nunito(color: Colors.white, fontSize: 12)),
               const Spacer(),
-              const Icon(LucideIcons.settings, color: Colors.white, size: 18),
+              const Icon(Icons.settings_outlined, color: Colors.white, size: 18),
               const SizedBox(width: 16),
-              const Icon(LucideIcons.maximize, color: Colors.white, size: 18),
+              const Icon(Icons.fullscreen, color: Colors.white, size: 18),
             ],
           ),
         ],
@@ -149,9 +148,9 @@ class _VideoPlayerScreenState extends State<VideoPlayerScreen> {
                   ),
                 ),
                 const Spacer(),
-                const Icon(LucideIcons.downloadCloud, color: Colors.grey, size: 20),
+                const Icon(Icons.download_outlined, color: Colors.grey, size: 20),
                 const SizedBox(width: 16),
-                const Icon(LucideIcons.heart, color: Colors.grey, size: 20),
+                const Icon(Icons.favorite_border, color: Colors.grey, size: 20),
               ],
             ),
             const SizedBox(height: 20),
@@ -162,7 +161,7 @@ class _VideoPlayerScreenState extends State<VideoPlayerScreen> {
             const SizedBox(height: 12),
             Row(
               children: [
-                const CircleAvatar(radius: 12, backgroundColor: Colors.grey, child: Icon(LucideIcons.user, size: 14, color: Colors.white)),
+                const CircleAvatar(radius: 12, backgroundColor: Colors.grey, child: Icon(Icons.person, size: 14, color: Colors.white)),
                 const SizedBox(width: 8),
                 Text("Instructor", style: GoogleFonts.nunito(fontWeight: FontWeight.bold)),
                 const Spacer(),

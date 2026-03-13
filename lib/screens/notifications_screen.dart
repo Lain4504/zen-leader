@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:lucide_icons/lucide_icons.dart';
 import 'package:zen_leader/theme/app_colors.dart';
 
 class NotificationsScreen extends StatefulWidget {
@@ -27,7 +26,7 @@ class _NotificationsScreenState extends State<NotificationsScreen> with SingleTi
         backgroundColor: Colors.white,
         elevation: 0,
         leading: IconButton(
-          icon: const Icon(LucideIcons.chevronLeft, color: AppColors.accentDark),
+          icon: const Icon(Icons.arrow_back_ios_new, color: AppColors.accentDark),
           onPressed: () => Navigator.pop(context),
         ),
         title: Text(
@@ -82,7 +81,7 @@ class _NotificationsScreenState extends State<NotificationsScreen> with SingleTi
         title: "Live class starting soon: Listening skills",
         subtitle: "Class starts in 15 minutes. Get ready!",
         time: "15 min ago",
-        icon: LucideIcons.video,
+        icon: Icons.videocam_outlined,
         iconColor: AppColors.primaryBlue,
         isUnread: true,
       ),
@@ -90,7 +89,7 @@ class _NotificationsScreenState extends State<NotificationsScreen> with SingleTi
         title: "Your instructor replied to your question",
         subtitle: "'Your question is a good one. You might try practicing...'",
         time: "1 hour ago",
-        icon: LucideIcons.messageCircle,
+        icon: Icons.chat_bubble_outline,
         iconColor: Colors.orange,
         isUnread: true,
       ),
@@ -98,7 +97,7 @@ class _NotificationsScreenState extends State<NotificationsScreen> with SingleTi
         title: "You earned the Mindful badge",
         subtitle: "Congratulations! You completed 7 days of meditation in a row.",
         time: "3 hours ago",
-        icon: LucideIcons.award,
+        icon: Icons.emoji_events_outlined,
         iconColor: Colors.amber,
         isUnread: false,
       ),
@@ -106,7 +105,7 @@ class _NotificationsScreenState extends State<NotificationsScreen> with SingleTi
         title: "New lesson: Emotional management in leadership",
         subtitle: "Module 4 is now open. Explore the new content.",
         time: "Yesterday",
-        icon: LucideIcons.bookOpen,
+        icon: Icons.menu_book_outlined,
         iconColor: AppColors.progressGreen,
         isUnread: false,
       ),

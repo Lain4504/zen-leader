@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:lucide_icons/lucide_icons.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:zen_leader/theme/app_colors.dart';
 import 'package:zen_leader/screens/lesson_screen.dart';
@@ -31,7 +30,7 @@ class ZenLeaderPathwayScreen extends StatelessWidget {
                         _buildNode(
                           id: "ZL1",
                           title: "Foundations",
-                          icon: LucideIcons.lotus,
+                          icon: Icons.spa,
                           status: NodeStatus.completed,
                           progress: 1.0,
                           xp: "+50 XP",
@@ -41,7 +40,7 @@ class ZenLeaderPathwayScreen extends StatelessWidget {
                         _buildNode(
                           id: "ZL2",
                           title: "Inner Mountain",
-                          icon: LucideIcons.mountain,
+                          icon: Icons.terrain,
                           status: NodeStatus.active,
                           progress: 0.45,
                           xp: "+100 XP",
@@ -50,7 +49,7 @@ class ZenLeaderPathwayScreen extends StatelessWidget {
                         ),
                         const SizedBox(height: 100),
                         _buildMilestone(
-                          icon: LucideIcons.trophy,
+                          icon: Icons.emoji_events,
                           title: "Milestone: Resilience",
                           color: AppColors.teal,
                           offset: -60,
@@ -59,7 +58,7 @@ class ZenLeaderPathwayScreen extends StatelessWidget {
                         _buildNode(
                           id: "ZL3",
                           title: "True Transformation",
-                          icon: LucideIcons.compass,
+                          icon: Icons.explore,
                           status: NodeStatus.locked,
                           progress: 0,
                           xp: "+150 XP",
@@ -86,7 +85,7 @@ class ZenLeaderPathwayScreen extends StatelessWidget {
       pinned: true,
       elevation: 0,
       leading: IconButton(
-        icon: const Icon(LucideIcons.arrowLeft, color: Colors.white),
+        icon: const Icon(Icons.arrow_back, color: Colors.white),
         onPressed: () => Navigator.pop(context),
       ),
       flexibleSpace: FlexibleSpaceBar(
@@ -109,7 +108,7 @@ class ZenLeaderPathwayScreen extends StatelessWidget {
               right: -50,
               bottom: -20,
               child: Icon(
-                LucideIcons.lotus,
+                Icons.spa,
                 size: 250,
                 color: Colors.white.withOpacity(0.1),
               ),
@@ -246,7 +245,7 @@ class ZenLeaderPathwayScreen extends StatelessWidget {
                         shape: BoxShape.circle,
                       ),
                       child: Icon(
-                        status == NodeStatus.locked ? LucideIcons.lock : icon,
+                        status == NodeStatus.locked ? Icons.lock : icon,
                         color: Colors.white,
                         size: 30,
                       ),

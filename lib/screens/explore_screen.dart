@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:lucide_icons/lucide_icons.dart';
 import 'package:zen_leader/theme/app_colors.dart';
 import 'package:zen_leader/screens/course_detail_screen.dart';
 import 'package:zen_leader/screens/join_seminar_screen.dart';
@@ -36,7 +35,7 @@ class ExploreScreen extends StatelessWidget {
                     hintText: "Search courses...",
                     hintStyle: GoogleFonts.nunito(color: Colors.grey),
                     border: InputBorder.none,
-                    icon: const Icon(LucideIcons.search, color: Colors.grey),
+                    icon: const Icon(Icons.search, color: Colors.grey),
                   ),
                 ),
               ),
@@ -85,7 +84,7 @@ class ExploreScreen extends StatelessWidget {
           );
         },
         backgroundColor: AppColors.primaryBlue,
-        icon: const Icon(LucideIcons.rocket, color: Colors.white),
+        icon: const Icon(Icons.rocket_launch, color: Colors.white),
         label: Text("JOIN SEMINARS", style: GoogleFonts.fredoka(fontWeight: FontWeight.bold, color: Colors.white)),
       ),
     );
@@ -202,7 +201,7 @@ class ExploreScreen extends StatelessWidget {
                       const SizedBox(width: 4),
                       Text(rating, style: GoogleFonts.nunito(fontWeight: FontWeight.bold)),
                       const SizedBox(width: 12),
-                      const Icon(LucideIcons.users, color: Colors.grey, size: 16),
+                      const Icon(Icons.people_alt_outlined, color: Colors.grey, size: 16),
                       const SizedBox(width: 4),
                       Text(students, style: GoogleFonts.nunito(color: Colors.grey)),
                       const Spacer(),

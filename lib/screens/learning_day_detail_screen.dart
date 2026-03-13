@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:lucide_icons/lucide_icons.dart';
 import 'package:zen_leader/theme/app_colors.dart';
 import 'package:zen_leader/screens/live_meeting_screen.dart';
 import 'package:zen_leader/screens/video_player_screen.dart';
@@ -17,7 +16,7 @@ class LearningDayDetailScreen extends StatelessWidget {
         backgroundColor: Colors.white,
         elevation: 0,
         leading: IconButton(
-          icon: const Icon(LucideIcons.chevronLeft, color: AppColors.accentDark),
+          icon: const Icon(Icons.arrow_back_ios_new, color: AppColors.accentDark),
           onPressed: () => Navigator.pop(context),
         ),
         title: Text(
@@ -40,28 +39,28 @@ class LearningDayDetailScreen extends StatelessWidget {
                 _buildMaterialCard(
                   title: "Video: Principles of deep listening",
                   duration: "15 min",
-                  icon: LucideIcons.playCircle,
+                  icon: Icons.play_circle_outline,
                   status: MaterialStatus.completed,
                   onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => const VideoPlayerScreen(title: "Principles of deep listening"))),
                 ),
                 _buildMaterialCard(
                   title: "Document: Deep practice",
                   duration: "10 min",
-                  icon: LucideIcons.fileText,
+                  icon: Icons.description_outlined,
                   status: MaterialStatus.available,
                   onTap: () {},
                 ),
                 _buildMaterialCard(
                   title: "Exercise: Mind training",
                   duration: "20 min",
-                  icon: LucideIcons.edit3,
+                  icon: Icons.edit_outlined,
                   status: MaterialStatus.available,
                   onTap: () {},
                 ),
                 _buildMaterialCard(
                   title: "Quiz: Knowledge check",
                   duration: "5 min",
-                  icon: LucideIcons.helpCircle,
+                  icon: Icons.help_outline,
                   status: MaterialStatus.available,
                   onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => const LessonScreen())),
                 ),
@@ -139,7 +138,7 @@ class LearningDayDetailScreen extends StatelessWidget {
                 ),
               ),
               const Spacer(),
-              const Icon(LucideIcons.video, color: Colors.white70, size: 20),
+              const Icon(Icons.videocam_outlined, color: Colors.white70, size: 20),
             ],
           ),
           const SizedBox(height: 16),
@@ -150,7 +149,7 @@ class LearningDayDetailScreen extends StatelessWidget {
           const SizedBox(height: 8),
           Row(
             children: [
-              const CircleAvatar(radius: 12, backgroundColor: Colors.white24, child: Icon(LucideIcons.user, size: 14, color: Colors.white)),
+              const CircleAvatar(radius: 12, backgroundColor: Colors.white24, child: Icon(Icons.person, size: 14, color: Colors.white)),
               const SizedBox(width: 8),
               Text("Instructor", style: GoogleFonts.nunito(color: Colors.white, fontWeight: FontWeight.bold)),
               const Spacer(),
@@ -234,9 +233,9 @@ class LearningDayDetailScreen extends StatelessWidget {
               ),
             ),
             if (isCompleted)
-              const Icon(LucideIcons.checkCircle, color: AppColors.progressGreen, size: 20)
+              const Icon(Icons.check_circle, color: AppColors.progressGreen, size: 20)
             else
-              const Icon(LucideIcons.chevronRight, color: Colors.grey, size: 18),
+              const Icon(Icons.chevron_right, color: Colors.grey, size: 18),
           ],
         ),
       ),

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:lucide_icons/lucide_icons.dart';
 import 'package:zen_leader/theme/app_colors.dart';
 
 class LeaderboardScreen extends StatelessWidget {
@@ -66,13 +65,13 @@ class LeaderboardScreen extends StatelessWidget {
               child: CircleAvatar(
                 radius: isFirst ? 45 : 35,
                 backgroundColor: AppColors.background,
-                child: Icon(LucideIcons.user, size: isFirst ? 40 : 30, color: Colors.grey),
+                child: Icon(Icons.person, size: isFirst ? 40 : 30, color: Colors.grey),
               ),
             ),
             if (isFirst)
               const Positioned(
                 top: 0,
-                child: Icon(LucideIcons.crown, color: Colors.amber, size: 28),
+                child: Icon(Icons.emoji_events, color: Colors.amber, size: 28),
               ),
           ],
         ),
@@ -131,14 +130,14 @@ class LeaderboardScreen extends StatelessWidget {
           const CircleAvatar(
             radius: 20,
             backgroundColor: AppColors.background,
-            child: Icon(LucideIcons.user, size: 18, color: Colors.grey),
+            child: Icon(Icons.person, size: 18, color: Colors.grey),
           ),
           const SizedBox(width: 16),
           Expanded(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text("Người dùng $rank", style: GoogleFonts.nunito(fontWeight: FontWeight.bold)),
+                Text("User $rank", style: GoogleFonts.nunito(fontWeight: FontWeight.bold)),
                 const SizedBox(height: 4),
                 ClipRRect(
                   borderRadius: BorderRadius.circular(4),

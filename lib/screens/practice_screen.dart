@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:lucide_icons/lucide_icons.dart';
 import 'package:zen_leader/theme/app_colors.dart';
 
 class PracticeScreen extends StatelessWidget {
@@ -19,7 +18,7 @@ class PracticeScreen extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Icon(LucideIcons.target, size: 80, color: AppColors.primaryBlue),
+            Icon(Icons.track_changes, size: 80, color: AppColors.primaryBlue),
             const SizedBox(height: 24),
             Text(
               "Coming Soon",

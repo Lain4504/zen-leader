@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:lucide_icons/lucide_icons.dart';
 import 'package:zen_leader/theme/app_colors.dart';
 import 'package:zen_leader/screens/home_screen.dart';
 import 'package:zen_leader/screens/profile_screen.dart';
@@ -23,7 +22,7 @@ class ZenLeaderApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Zen Leader',
+      title: 'Institute for Zen Leadership',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         scaffoldBackgroundColor: AppColors.background,
@@ -81,11 +80,11 @@ class _MainNavigationState extends State<MainNavigation> {
           selectedLabelStyle: GoogleFonts.fredoka(fontWeight: FontWeight.bold, fontSize: 10),
           unselectedLabelStyle: GoogleFonts.nunito(fontSize: 10),
           items: const [
-            BottomNavigationBarItem(icon: Icon(LucideIcons.home), label: 'Home'),
-            BottomNavigationBarItem(icon: Icon(LucideIcons.layout), label: 'Programs'),
-            BottomNavigationBarItem(icon: Icon(LucideIcons.target), label: 'Practice'),
-            BottomNavigationBarItem(icon: Icon(LucideIcons.bookOpen), label: 'Insights'),
-            BottomNavigationBarItem(icon: Icon(LucideIcons.user), label: 'Profile'),
+            BottomNavigationBarItem(icon: Icon(Icons.home_outlined), label: 'Home'),
+            BottomNavigationBarItem(icon: Icon(Icons.grid_view_outlined), label: 'Programs'),
+            BottomNavigationBarItem(icon: Icon(Icons.track_changes), label: 'Practice'),
+            BottomNavigationBarItem(icon: Icon(Icons.menu_book_outlined), label: 'Insights'),
+            BottomNavigationBarItem(icon: Icon(Icons.person_outline), label: 'Profile'),
           ],
         ),
       ),

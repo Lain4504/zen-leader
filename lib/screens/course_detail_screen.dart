@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:lucide_icons/lucide_icons.dart';
 import 'package:zen_leader/theme/app_colors.dart';
 import 'package:zen_leader/screens/course_detail_path_screen.dart';
 
@@ -46,7 +45,7 @@ class CourseDetailScreen extends StatelessWidget {
       pinned: true,
       backgroundColor: AppColors.primaryBlue,
       leading: IconButton(
-        icon: const Icon(LucideIcons.chevronLeft, color: Colors.white),
+        icon: const Icon(Icons.arrow_back_ios_new, color: Colors.white),
         onPressed: () => Navigator.pop(context),
       ),
       flexibleSpace: FlexibleSpaceBar(
@@ -102,7 +101,7 @@ class CourseDetailScreen extends StatelessWidget {
           const SizedBox(height: 16),
           Row(
             children: [
-              const CircleAvatar(radius: 12, backgroundColor: Colors.grey, child: Icon(LucideIcons.user, size: 14, color: Colors.white)),
+              const CircleAvatar(radius: 12, backgroundColor: Colors.grey, child: Icon(Icons.person, size: 14, color: Colors.white)),
               const SizedBox(width: 8),
               Text("Instructor", style: GoogleFonts.nunito(fontWeight: FontWeight.bold, fontSize: 14)),
               const Spacer(),
@@ -110,7 +109,7 @@ class CourseDetailScreen extends StatelessWidget {
               const SizedBox(width: 4),
               Text("4.9", style: GoogleFonts.nunito(fontWeight: FontWeight.bold)),
               const SizedBox(width: 12),
-              const Icon(LucideIcons.users, color: Colors.grey, size: 18),
+              const Icon(Icons.people_alt_outlined, color: Colors.grey, size: 18),
               const SizedBox(width: 4),
               Text("1.5k Students", style: GoogleFonts.nunito(color: Colors.grey, fontSize: 13)),
             ],
@@ -168,10 +167,10 @@ class CourseDetailScreen extends StatelessWidget {
         children: [
           _buildSectionTitle("Curriculum"),
           const SizedBox(height: 16),
-          _buildCurriculumItem("1. Video: Introduction to empathy", "15 min", LucideIcons.playCircle),
-          _buildCurriculumItem("2. Quiz: Recognizing emotions", "5 min", LucideIcons.helpCircle),
-          _buildCurriculumItem("3. Practice: Meditation exercises", "10 min", LucideIcons.pencil),
-          _buildCurriculumItem("4. Assignment: Empathy practice", "20 min", LucideIcons.fileText),
+          _buildCurriculumItem("1. Video: Introduction to empathy", "15 min", Icons.play_circle_outline),
+          _buildCurriculumItem("2. Quiz: Recognizing emotions", "5 min", Icons.help_outline),
+          _buildCurriculumItem("3. Practice: Meditation exercises", "10 min", Icons.edit_outlined),
+          _buildCurriculumItem("4. Assignment: Empathy practice", "20 min", Icons.description_outlined),
         ],
       ),
     );
@@ -197,7 +196,7 @@ class CourseDetailScreen extends StatelessWidget {
               ],
             ),
           ),
-          const Icon(LucideIcons.chevronRight, color: Colors.grey, size: 18),
+          const Icon(Icons.chevron_right, color: Colors.grey, size: 18),
         ],
       ),
     );
@@ -221,7 +220,7 @@ class CourseDetailScreen extends StatelessWidget {
               const SizedBox(height: 8),
               Row(
                 children: [
-                  const Icon(LucideIcons.zap, color: Colors.amber, size: 24),
+                  const Icon(Icons.bolt, color: Colors.amber, size: 24),
                   const SizedBox(width: 8),
                   Text("+500 XP", style: GoogleFonts.fredoka(fontSize: 18, fontWeight: FontWeight.bold, color: AppColors.accentDark)),
                 ],
@@ -234,7 +233,7 @@ class CourseDetailScreen extends StatelessWidget {
             height: 60,
             padding: const EdgeInsets.all(12),
             decoration: const BoxDecoration(color: Colors.white, shape: BoxShape.circle),
-            child: const Icon(LucideIcons.award, color: Colors.amber, size: 30),
+            child: const Icon(Icons.emoji_events, color: Colors.amber, size: 30),
           ),
         ],
       ),
