@@ -22,8 +22,6 @@ class HomeScreen extends StatelessWidget {
             children: [
               _buildHeader(),
               const SizedBox(height: 32),
-              _buildProgramJourney(context),
-              const SizedBox(height: 32),
               _buildContinueLearning(context),
               const SizedBox(height: 32),
               _buildUpcomingEvents(),

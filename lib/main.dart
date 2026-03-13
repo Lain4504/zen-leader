@@ -22,7 +22,7 @@ class ZenLeaderApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Institute for Zen Leadership',
+      title: 'Zen Leadership',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         scaffoldBackgroundColor: AppColors.background,
